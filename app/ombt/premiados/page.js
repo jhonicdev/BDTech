@@ -88,7 +88,7 @@ export default function Materiais() {
                 <p>Medalha de Bronze: <strong>59 pontos</strong></p>
                 <p>Menção Honrosa: <strong>33 pontos</strong></p>
                 <a target="_blank" href="https://drive.google.com/file/d/1al-wi9zaiNj5zNUmTk4jdIPdo85Sspry/view?usp=sharing">Acessar Lista de Premiados em PDF</a>
-                <p style={{ marginTop: "10px" }}>Nessa prova, a nota máxima foi de <strong>33 pontos</strong>.</p>
+                <p style={{ marginTop: "10px" }}>Nessa prova, a nota máxima foi de <strong>140 pontos</strong>.</p>
             </Modal>
 
             <Modal title="Pontuações mínimas para cada premiação" open={modalAberto === "3OMBT"} onOk={fecharModal} onCancel={fecharModal}>

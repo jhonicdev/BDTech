@@ -75,13 +75,7 @@ body {
 
 @media (max-width: 650px) {
   .Navbar {
-    height: 140px;
+    height: 150px;
     align-items: flex-start;
-  }
-}
-
-@media (max-width: 480px) {
-  .Navbar {
-    padding: 10px;
   }
 }
