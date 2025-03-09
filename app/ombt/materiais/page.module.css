@@ -1,0 +1,28 @@
+.Materiais-Ano {
+    margin-bottom: 60px;
+}
+
+.Provas-Gabaritos {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.Prova-Gabarito {
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(225, 225, 225);
+    border-radius: 20px;
+    height: 250px;
+    width: 175px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(205, 205, 205);
+    }
+}
