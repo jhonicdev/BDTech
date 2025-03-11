@@ -16,8 +16,8 @@ export default function EMBT() {
   return (
     <div className="content">
         <Text>
-            O <span style={{color: "darkblue"}}>EMBT</span> é um simulado do Exame Nacional do Ensino Médio (ENEM) e tem como fito o auxílio dos membros do BDT em sua árdua jornada de estudos.
-            <strong> Ainda não há previsão de data para sua aplicação.</strong> No entanto, assim que essa data for definida, ela será avisada no grupo, junto às instruções necessárias para realização do simulado.
+            O <span style={{color: "darkblue"}}>EMBT</span> é um simulado do Exame Nacional do Ensino Médio (ENEM) e tem como fito auxiliar os membros do BDT em sua árdua jornada de estudos.
+            <strong> Ainda não há previsão de data para seu lançamento.</strong> No entanto, assim que essa data for definida, ela será informada no grupo, junto às instruções necessárias para realização do simulado.
         </Text>
         <div></div>
         <Text>

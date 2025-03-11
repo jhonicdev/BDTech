@@ -1,0 +1,46 @@
+.Alternativas {
+    display: flex;
+    flex-direction: column;
+    width: 100% ;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+}
+
+.Alternativa {
+    width: 100% !important;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    box-sizing: border-box !important;
+}
+
+
+
+.TextArea {
+    min-width: 95% !important;
+    min-height: min-content !important;
+    max-height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+
+.BotaoEnviar {
+    background-color: orange;
+    color: white !important;
+    border-color: white !important;
+    font-size: 20px;
+    
+    &:hover {
+        background-color: rgb(200, 130, 0) !important;
+        color: white !important;
+        border-color: white !important;
+    }
+}
+
+
+
+.Questoes {
+    margin-top: 30px;
+}

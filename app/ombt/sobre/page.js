@@ -16,7 +16,7 @@ export default function Sobre_OMBT() {
   return (
     <div className="content">
         <Text>
-        Este é um protótipo de plataforma desenvolvido com o único fim de auxiliar a produção da fictícia Olimpíada de Matemática do Bonde do Tigrão (OMBT), que é aplicada no grupo do BDT com a finalidade de desenvolver o interesse e o intelecto no âmbito matemático, além de aumentar a interação dos integrantes.
+        A fictícia Olimpíada de Matemática do Bonde do Tigrão (OMBT) tem, por finalidade principal, ampliar o interesse e o intelecto no âmbito matemático, além de aumentar a interação dos integrantes no grupo do BDT.
         </Text>
         <p></p>
         <Text>
