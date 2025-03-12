@@ -56,7 +56,12 @@ export default function ListarQuestoes({ questoes }) {
                     questoes.map((q) => (
                         <Card key={q.id} title={(q.titulo || "Sem título")} size="small"
                             extra={
-                                <span>
+                                <span  style={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',   // Faz as tags se moverem para a linha seguinte quando necessário
+                                    gap: '3px',         // Define um pequeno espaçamento entre as tags
+                                    maxWidth: '100%'    // Garante que o conteúdo se ajuste no espaço disponível
+                                }}>
                                     {
                                         q.conteudos.replace(/[{}"]/g, "").split(",").map(c => {
                                             return <Tag color="gray" key={c}>{c}</Tag>
