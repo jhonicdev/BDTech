@@ -59,7 +59,7 @@ export default function ListarQuestoes({ questoes }) {
                                 <span  style={{
                                     display: 'flex',
                                     flexWrap: 'wrap',   // Faz as tags se moverem para a linha seguinte quando necessário
-                                    gap: '3px',         // Define um pequeno espaçamento entre as tags
+                                    gap: '5px',         // Define um pequeno espaçamento entre as tags
                                     maxWidth: '100%'    // Garante que o conteúdo se ajuste no espaço disponível
                                 }}>
                                     {
