@@ -46,7 +46,7 @@ export default function RegistroQuestao({ onAddQuestao }) {
     const [dissertativa, setDissertativa] = useState(false);
     const [correta, setCorreta] = useState('');
     const [elaborador, setElaborador] = useState('Autor desconhecido');
-    const [ativa, setAtiva] = useState(false);
+    const [ativa, setAtiva] = useState(true);
 
 
 
@@ -103,7 +103,7 @@ export default function RegistroQuestao({ onAddQuestao }) {
         <form onSubmit={handleSubmit}>
             <Title level={3}>Contribua para o Banco de Questões da OMBT! 😎</Title>
 
-            <Input style={{ fontSize: "17px", fontWeight: "bolder", marginTop: "30px" }} placeholder="Título da questão (opcional)" variant="borderless" value={titulo} onChange={(e) => setTitulo(e.target.value)} />
+            <Input maxLength="70" style={{ fontSize: "17px", fontWeight: "bolder", marginTop: "30px" }} placeholder="Título da questão (opcional)" variant="borderless" value={titulo} onChange={(e) => setTitulo(e.target.value)} />
             <TextArea rows={4} placeholder="Enunciado da questão" value={enunciado} onChange={(e) => setEnunciado(e.target.value)} />
             <Text style={{ color: "red" }}>*Infelizmente, ainda não é permitido anexar imagens nas questões. :\</Text>
 
@@ -145,18 +145,20 @@ export default function RegistroQuestao({ onAddQuestao }) {
                 <Form layout="vertical">
                     <Form.Item label="Qual é o principal conteúdo abordado nessa questão?">
                         <Radio.Group value={conteudo} onChange={(e) => setConteudo(e.target.value)}>
-                            <Radio.Button value="Raciocínio lógico">Raciocínio lógico</Radio.Button>
+                            <Radio.Button value="Álgebra">Álgebra</Radio.Button>
+                            <Radio.Button value="Análise combinatória">Análise combinatória</Radio.Button>
                             <Radio.Button value="Aritmética">Aritmética</Radio.Button>
+                            <Radio.Button value="Funções">Funções</Radio.Button>
+                            <Radio.Button value="Geometria espacial">Geometria espacial</Radio.Button>
+                            <Radio.Button value="Geometria plana">Geometria plana</Radio.Button>
+                            <Radio.Button value="Gráficos" disabled>Gráficos</Radio.Button>
+                            <Radio.Button value="Múltiplos e divisores">Múltiplos e divisores</Radio.Button>
+                            <Radio.Button value="Paridade">Paridade</Radio.Button>
+                            <Radio.Button value="Probabilidade">Probabilidade</Radio.Button>
+                            <Radio.Button value="Raciocínio lógico">Raciocínio lógico</Radio.Button>
                             <Radio.Button value="Razão e proporção">Razão e proporção</Radio.Button>
                             <Radio.Button value="Sequências e progressões">Sequências e progressões</Radio.Button>
-                            <Radio.Button value="Geometria plana">Geometria plana</Radio.Button>
-                            <Radio.Button value="Geometria espacial">Geometria espacial</Radio.Button>
-                            <Radio.Button value="Paridade">Paridade</Radio.Button>
-                            <Radio.Button value="Análise combinatória">Análise combinatória</Radio.Button>
-                            <Radio.Button value="Probabilidade">Probabilidade</Radio.Button>
-                            <Radio.Button value="Álgebra">Álgebra</Radio.Button>
-                            <Radio.Button value="Funções">Funções</Radio.Button>
-                            <Radio.Button value="Gráficos" disabled>Gráficos</Radio.Button>
+                            <Radio.Button value="Outro">Outro</Radio.Button>
                         </Radio.Group>
                     </Form.Item>
                 </Form>

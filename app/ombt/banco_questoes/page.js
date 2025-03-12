@@ -44,7 +44,7 @@ export default function Banco_Questoes() {
 
     return (
         <div className="content">   
-            <Title level={3}>Questões validadas pela comissão do Banco de Questões</Title>
+            <Title level={3}>Banco de Questões da OMBT</Title>
             <Button href="./banco_questoes/registro">
                 <PlusOutlined />
                 ENVIAR NOVA QUESTÃO

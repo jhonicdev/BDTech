@@ -45,8 +45,7 @@ export default function RegistroQuestao_OMBT() {
 
     console.log("Resposta da API:", response);
     if (response.ok) {
-      window.alert(`A questão foi enviada com sucesso! :)
-        `);
+      window.alert("A questão foi enviada com sucesso! :)\n\nAlerte a Equipe OMBT para que seja feita a análise da questão enviada por você.");
     } else { console.error('Falha ao adicionar questão:', await response.text()); }
   }
 

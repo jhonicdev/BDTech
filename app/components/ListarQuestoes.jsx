@@ -2,13 +2,16 @@ import { useState } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 import React from "react";
-import { Divider, Button, Input, Radio, Form, Space, Card, Spin } from "antd";
+import { Divider, Button, Input, Radio, Form, Space, Card, Spin, Tag } from "antd";
 import Title from 'antd/lib/typography/Title';
 import Text from 'antd/lib/typography/Text';
 import styles from '../ombt/banco_questoes/page.module.css';
+import formatarData from './FormatarData';
+import validarAlternativa from './ValidarAlternativa'
 
 // ICONES
 import { CheckCircleOutlined } from "@ant-design/icons";
+
 
 const { TextArea } = Input;
 
@@ -22,15 +25,28 @@ export default function ListarQuestoes({ questoes }) {
             [qId]: value,
         });
     };
-    // Função para validar a resposta
-    const validateAnswer = (qId, correctAnswer) => {
-        if (answers[qId] == null) return;
-        if (answers[qId] === correctAnswer) {
-            alert("Resposta correta. Parabéns! ;)");
-        } else {
-            alert("Resposta errada! :(");
+
+
+    const corDificuldade = (dificuldade) => {
+        switch (dificuldade) {
+            case "Extremamente fácil":
+                return "#006400";
+            case "Muito fácil":
+                return "#00b400";
+            case "Fácil":
+                return "#00dc00";
+            case "Difícil":
+                return "#c44d4d";
+            case "Muito difícil":
+                return "#bb0b0b";
+            case "Extremamente difícil":
+                return "#800000";
+            default:
+                return "yellow";
         }
-    };
+            
+    }
+    
 
 
     return (
@@ -38,8 +54,18 @@ export default function ListarQuestoes({ questoes }) {
             {
                 questoes && questoes.length > 0 ? (
                     questoes.map((q) => (
-                        <Card key={q.id} title={"Questão " + (questoes.indexOf(q) + 1) + " - " + q.dificuldade + " - "  + (q.titulo || "Sem título")} size="small">
+                        <Card key={q.id} title={(q.titulo || "Sem título")} size="small"
+                            extra={
+                                <span>
+                                    <Tag color="gray">{q.conteudo}</Tag>
+                                    <Tag color={corDificuldade(q.dificuldade)}>{q.dificuldade}</Tag>
+                                </span>
+                                
+                            }
+                        >
+
                             <Text>{q.enunciado}</Text>
+                            
 
                             <Radio.Group
                                 value={answers[q.id] || null}
@@ -70,18 +96,18 @@ export default function ListarQuestoes({ questoes }) {
 
                             <Button
                                 style={{ marginTop: "20px" }}
-                                onClick={() => validateAnswer(q.id, q.correta)}
+                                onClick={() => validarAlternativa(answers, q.id, q.correta)}
                             >
                                 Validar resposta
                             </Button>
 
                             <Text style={{ marginTop: "20px", display: "flex", justifyContent: "flex-end", fontSize: "10px" }}>
-                                Questão elaborada por {q.elaborador}.
+                                Questão elaborada por {q.elaborador}. Enviada em {formatarData(q.data_registro)}.
                             </Text>
                         </Card>
                     ))
                 ) : (
-                    <Text>Carregando questões <Spin /></Text>
+                    <Spin />
                 )
             }
         </Space>
