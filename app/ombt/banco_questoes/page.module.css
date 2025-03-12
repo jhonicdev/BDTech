@@ -1,10 +1,10 @@
 .Alternativas {
     display: flex;
     flex-direction: column;
-    width: 100% ;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+
     gap: 5px;
+    height: auto; /* ou qualquer valor que você deseje, ajusta a altura para 100% da tela */
 }
 
 .Alternativa {
@@ -13,16 +13,16 @@
     vertical-align: middle;
     align-items: center;
     box-sizing: border-box !important;
+    flex-grow: 1; /* Isso vai permitir que os TextAreas cresçam para ocupar o espaço restante */
 }
 
-
-
 .TextArea {
-    min-width: 95% !important;
-    min-height: min-content !important;
-    max-height: 100px;
-    padding: 10px;
+    flex-grow: 1; /* Faz o TextArea ocupar o espaço disponível */
+    min-height: 50px; /* Tamanho mínimo, para não ficar muito pequeno */
+    max-height: 100px; /* Tamanho máximo */
+
     border: 1px solid #ccc;
+    width: 100%; /* Garante que o TextArea ocupe toda a largura disponível */
 }
 
 

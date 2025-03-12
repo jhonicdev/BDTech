@@ -57,7 +57,12 @@ export default function ListarQuestoes({ questoes }) {
                         <Card key={q.id} title={(q.titulo || "Sem título")} size="small"
                             extra={
                                 <span>
-                                    <Tag color="gray">{q.conteudo}</Tag>
+                                    {
+                                        q.conteudos.replace(/[{}"]/g, "").split(",").map(c => {
+                                            return <Tag color="gray" key={c}>{c}</Tag>
+                                        })
+                                    }
+                                    
                                     <Tag color={corDificuldade(q.dificuldade)}>{q.dificuldade}</Tag>
                                 </span>
                                 

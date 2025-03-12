@@ -21,7 +21,7 @@
     background-color: rgb(225, 225, 225);
     border-radius: 20px;
     height: 200px;
-    width: 160px;
+    width: 150px;
     box-sizing: border-box; /* Certifica-se de que a largura considera o padding */
     transition: background-color 0.3s ease; /* Adiciona transição suave na cor de fundo */
 
