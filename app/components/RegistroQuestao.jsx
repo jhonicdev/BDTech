@@ -195,7 +195,7 @@ export default function RegistroQuestao({ onAddQuestao }) {
             </div>
 
             <div style={{ marginTop: "50px" }}>
-                <Text>Quem elaborou essa questão?</Text>
+                <Text>Referências da questão:</Text>
                 <Input placeholder="Elaborador da questão" variant="underlined" value={elaborador} onChange={(e) => setElaborador(e.target.value)} />
             </div>
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 import React from "react";
-import { Divider, Button, Input, Radio, Form, Space, Card, Spin, Tag } from "antd";
+import { Divider, Button, Input, Radio, Form, Space, Card, Spin, Tag, Carousel } from "antd";
 import Title from 'antd/lib/typography/Title';
 import Text from 'antd/lib/typography/Text';
 import styles from '../ombt/banco_questoes/page.module.css';
@@ -15,7 +15,10 @@ import { CheckCircleOutlined } from "@ant-design/icons";
 
 const { TextArea } = Input;
 
-export default function ListarQuestoes({ questoes }) {
+
+
+
+export default function ListarQuestoes({ questoes, selectDificuldade }) {
     const [answers, setAnswers] = useState({}); // Armazenamento das respostas selecionadas
 
     // Função para lidar com a seleção de resposta
@@ -51,6 +54,10 @@ export default function ListarQuestoes({ questoes }) {
 
     return (
         <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
+
+
+
+
             {
                 questoes && questoes.length > 0 ? (
                     questoes.map((q) => (
@@ -75,6 +82,9 @@ export default function ListarQuestoes({ questoes }) {
                         >
 
                             <Text>{q.enunciado}</Text>
+                            <Text style={{ marginTop: "20px", display: "flex", justifyContent: "flex-end", fontSize: "10px" }}>
+                                {q.elaborador}. Enviada em {formatarData(q.data_registro)}.
+                            </Text>
                             
 
                             <Radio.Group
@@ -111,9 +121,6 @@ export default function ListarQuestoes({ questoes }) {
                                 Validar resposta
                             </Button>
 
-                            <Text style={{ marginTop: "20px", display: "flex", justifyContent: "flex-end", fontSize: "10px" }}>
-                                Questão elaborada por {q.elaborador}. Enviada em {formatarData(q.data_registro)}.
-                            </Text>
                         </Card>
                     ))
                 ) : (
