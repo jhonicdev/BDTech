@@ -3329,7 +3329,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
           <Button style={{
             backgroundColor: "orange", color: "white", fontWeight: "bold", border: "1px solid orange"
           }}
-            onClick={() => window.open("https://drive.google.com/file/d/1ct143J-X6vb86wF-sMKycm_LrtIvct2I/view?usp=sharing", "_blank")}
+            onClick={() => window.open("https://drive.google.com/file/d/1xFvnMluCt-wiW_WCF881gtmbN538-LmA/view?usp=sharing", "_blank")}
           >
             <FilePdfOutlined /> Acessar prova em PDF
           </Button>
@@ -3500,7 +3500,8 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
 
 
           <Title level={3} style={{ marginTop: "40px" }}>
-            REDAÇÃO
+            PROPOSTA DE REDAÇÃO
+            <Title level={5}>A partir da leitura dos textos motivadores e com base nos conhecimentos construídos ao longo de sua formação, redija um texto dissertativo-argumentativo em modalidade escrita formal da língua portuguesa sobre o tema “Desafios para o enfrentamento da intolerância contra pessoas trans na busca por uma sociedade mais justa e inclusiva”, apresentando proposta de intervenção que respeite os direitos humanos. Selecione, organize e relacione, de forma coerente e coesa, argumentos e fatos para a defesa de seu ponto de vista.</Title>
           </Title>
           <Card title="INSTRUÇÕES PARA A REDAÇÃO">
             <Text>
@@ -3519,7 +3520,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
             <Button style={{
               backgroundColor: "orange", color: "white", fontWeight: "bold", border: "1px solid orange"
             }}
-              onClick={() => window.open("https://drive.google.com/file/d/1MQ19dJmEZCTpVKMhI4L61UHaZSEq-I0Y/view?usp=sharing", "_blank")}
+              onClick={() => window.open("https://drive.google.com/file/d/1FBFufpORvXJ9FLPV8CPz2sU--_C3Vzy1/view?usp=sharing", "_blank")}
             >
               <FilePdfOutlined /> Textos motivadores
           </Button>
