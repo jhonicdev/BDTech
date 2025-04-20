@@ -21,7 +21,7 @@
 
 body {
   overflow-x: hidden;
-  background: var(--background);
+  background: white;
   color: var(--foreground);
   font-family: var(--font-geist-sans);
   flex-wrap: wrap;

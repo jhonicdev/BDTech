@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Menu, Dropdown, Button } from "antd";
 import {
-  DownOutlined, FileAddOutlined, FileTextOutlined, InfoCircleOutlined, StarOutlined, CloudUploadOutlined, TrophyOutlined, BookOutlined
+  DownOutlined, FileAddOutlined, FileTextOutlined, InfoCircleOutlined, StarOutlined, CloudUploadOutlined, TrophyOutlined, BookOutlined, LockOutlined
 } from "@ant-design/icons";
 import Image from "next/image";
 
@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
         <header>
             <nav className="Navbar">
             <Button href="/embt" type="primary" className="Navbar-option">
-              Simulado <span style={{color: "darkblue"}}>EMBT</span>
+              <span style={{color: "#b45f06"}}>EMBT<i style={{fontWeight: "normal", color: "white"}}>2025</i></span> <LockOutlined />
             </Button>
 
             <Dropdown menu={OMBT_Menu} trigger={["hover"]} className="Navbar-option">
