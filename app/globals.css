@@ -22,7 +22,7 @@
 body {
   overflow-x: hidden;
   background: white;
-  color: var(--foreground);
+  color: black;
   font-family: var(--font-geist-sans);
   flex-wrap: wrap;
 }

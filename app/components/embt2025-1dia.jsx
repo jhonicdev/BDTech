@@ -79,7 +79,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          LENNON, J.&nbsp;<b>Imagine</b>. Disponível em: https://www.letras.mus.br. Acesso em 24 mar. 2024 (fragmento).
+          LENNON, J. Imagine. Disponível em: https://www.letras.mus.br. Acesso em 24 mar. 2024 (fragmento).
         </Text>
         <Text>
           O trecho da música “<i>Imagine</i>”, de John Lennon, revela, por meio da construção de um mundo idealizado, uma crítica à(ao)
@@ -192,7 +192,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          GAGA, L; FAUNTLEROY, J; D’MILE; MARS, B.&nbsp;<b>Die with a smile</b>. Disponível em: https://www.letras.mus.br. Acesso em 04 nov. 2024 (fragmento).
+          GAGA, L; FAUNTLEROY, J; D’MILE; MARS, B. Die with a smile. Disponível em: https://www.letras.mus.br. Acesso em 04 nov. 2024 (fragmento).
         </Text>
         <Text>
           No fragmento retirado da música <i>Die with a smile</i>, sucesso dos célebres cantores Lady Gaga e Bruno Mars, a expressão “<i>like it’s the last night</i>” revela, na intensidade das convicções transmitidas, a intenção do eu lírico em
@@ -222,7 +222,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          WOOLF, V. A.&nbsp;<b>A Room of One's Ownr</b>. Disponível em: http://seas3.elte.hu. Acesso em 09 abr. 2025.
+          WOOLF, V. A. A Room of One's Ownr. Disponível em: http://seas3.elte.hu. Acesso em 09 abr. 2025.
         </Text>
         <Text>
           Na argumentação apresentada sobre mulheres escritoras, Virginia Woolf demonstra o(a)
@@ -253,7 +253,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          ChatGPT.&nbsp;<b>Open AI</b>. Acesso em 20 mar. 2025 (adaptado).
+          ChatGPT. Open AI. Acesso em 20 mar. 2025 (adaptado).
         </Text>
         <Text>Ao relatar uma situação cotidiana, o texto busca</Text>
       </>
@@ -319,7 +319,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          TARLOVSKY, K.&nbsp;<b>Is social media more like cigarettes or junk food?</b>&nbsp;The New Yorker. Disponível em: https://www.newyorker.com. Acesso em 09 abr. 2025.
+          TARLOVSKY, K. Is social media more like cigarettes or junk food? The New Yorker. Disponível em: https://www.newyorker.com. Acesso em 09 abr. 2025.
         </Text>
         <Text>
           Considerando o consumo de alimentos na sociedade norte-americana, o texto objetiva
@@ -362,7 +362,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          A Home on the Range. LOMAX, John A. (org.).&nbsp;<b>Cowboy songs and other frontier ballads</b>. 1910. Disponível em: https://hdl.handle.net. Acesso em 09 abr. 2025.
+          A Home on the Range. LOMAX, John A. (org.). Cowboy songs and other frontier ballads. 1910. Disponível em: https://hdl.handle.net. Acesso em 09 abr. 2025.
         </Text>
         <Text>
           Nessa letra, de uma canção folclórica norte-americana, o trecho “<i>Where seldom is heard a discouraging word</i>” introduz a ideia de
@@ -411,7 +411,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          BITTENCOURT, S.&nbsp;<b>Naquela mesa</b>. Brasil: EMI-Odeon, 1972.
+          BITTENCOURT, S. Naquela mesa. Brasil: EMI-Odeon, 1972.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -426,7 +426,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          SEBASTIANBAM.&nbsp;<b>Música em prosa</b>, 2017. Disponível em: https://musicaemprosa.com. Acesso em 23 mar. 2025 (adaptado).
+          SEBASTIANBAM. Música em prosa, 2017. Disponível em: https://musicaemprosa.com. Acesso em 23 mar. 2025 (adaptado).
         </Text>
         <Text>
           Considerando os aspectos descritos no Texto II, a função da linguagem predominante na letra da canção é
@@ -467,7 +467,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          <b>Espetáculo “O Auto da Compadecida” é o grande destaque do festival Amazônia Encena Na Rua, em São Luís</b>. 2023. Disponível em: https://oimparcial.com.br/. Acesso em 14 abr. 2025.
+          Espetáculo “O Auto da Compadecida” é o grande destaque do festival Amazônia Encena Na Rua, em São Luís. 2023. Disponível em: https://oimparcial.com.br/. Acesso em 14 abr. 2025.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -482,7 +482,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          <b>Espetáculo “O Auto da Compadecida” é o grande destaque do festival Amazônia Encena Na Rua, em São Luís</b>. 2023. Disponível em: https://oimparcial.com.br/. Acesso em 14 abr. 2025.
+          Espetáculo “O Auto da Compadecida” é o grande destaque do festival Amazônia Encena Na Rua, em São Luís. 2023. Disponível em: https://oimparcial.com.br/. Acesso em 14 abr. 2025.
         </Text>
         <Text>
           Ao remontar um clássico literário em uma interpretação cenográfica, a apresentação mostrada possibilita a
@@ -512,7 +512,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          LÉVY, P.&nbsp;<b>O que é virtual?</b>&nbsp;São Paulo, Ed. 34, 1996.
+          LÉVY, P. O que é virtual? São Paulo, Ed. 34, 1996.
         </Text>
         <Text>
           No contexto das novas tecnologias de informação e comunicação, a virtualização
@@ -602,7 +602,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          MORLEY, H.&nbsp;<b>Minha vida de menina</b>. São Paulo: Companhia de Bolso, 2017.
+          MORLEY, H. Minha vida de menina. São Paulo: Companhia de Bolso, 2017.
         </Text>
         <Text>
           O excerto compõe a obra <i>Minha vida de menina</i>, publicação do diário íntimo de uma adolescente que viveu em Diamantina, Minas Gerais, no fim do século XIX, pouco tempo depois da abolição da escravatura e da Proclamação da República. Traços da personalidade da adolescente ficam claros ao longo do texto, entre eles, a
@@ -633,7 +633,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          SAUSSURE, F.&nbsp;<b>Curso de Linguística Geral</b>. Cultrix, São Paulo: 2006 (adaptado).
+          SAUSSURE, F. Curso de Linguística Geral. Cultrix, São Paulo: 2006 (adaptado).
         </Text>
         <Text>
           Na composição de textos técnicos, é essencial o uso de elementos coesivos que retomem e que anunciem estruturas frasais. O anúncio de uma determinada informação se exemplifica em
@@ -677,7 +677,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          WERNECK et. al.&nbsp;<b>Patrícia Poeta</b>. Comédia MTV, 2011 (adaptado).
+          WERNECK et. al. Patrícia Poeta. Comédia MTV, 2011 (adaptado).
         </Text>
         <Text>
           Nessa espécie de solilóquio, a interlocutora, ao adotar uma linguagem expressiva e reflexiva, faz uso da metáfora da "andorinha" para remeter à(ao)
@@ -751,7 +751,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          DALI, S.&nbsp;<b>A persistência da memória</b>, 1931. Óleo sobre tela.
+          DALI, S. A persistência da memória, 1931. Óleo sobre tela.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -776,7 +776,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          MAGRITTE, R.&nbsp;<b>A casa de banho de vidro</b>. Óleo sobre tela.
+          MAGRITTE, R. A casa de banho de vidro. Óleo sobre tela.
         </Text>
         <Text>
           As obras <i>A persistência da memória</i> e <i>A casa de banho de vidro</i> demonstram grande relação com as escolas europeias. Nessas obras, há elementos que remetem com maior precisão à estética denominada
@@ -812,7 +812,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          NICOLAU, J.&nbsp;<b>Quando a palavra liberta</b>. Indisponível. Acesso em 18 mar. 2025.
+          NICOLAU, J. Quando a palavra liberta. Indisponível. Acesso em 18 mar. 2025.
         </Text>
         <Text>
           Perante o outro, a indecisão do eu lírico se expressa na
@@ -844,7 +844,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          MOREIRA, I.&nbsp;<b>O escravo do naturalista</b>. Ciência Hoje, v. 31, n. 184, jul.2002 (adaptado).
+          MOREIRA, I. O escravo do naturalista. Ciência Hoje, v. 31, n. 184, jul.2002 (adaptado).
         </Text>
         <Text>
           Considerando-se as operações de retomada de informações do texto, há interdependência entre as expressões
@@ -899,7 +899,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          MELGUISO, J.&nbsp;<b>Omelete</b>. Disponível em: https://www.omelete.com.br. Acesso em 20 mar. 2025 (adaptado).
+          MELGUISO, J. Omelete. Disponível em: https://www.omelete.com.br. Acesso em 20 mar. 2025 (adaptado).
         </Text>
         <Text>
           A leitura do texto sobre <i>Divertida Mente 2</i> permite categorizá-lo como um(a)
@@ -937,7 +937,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          <b>DIA DE BEAUTÉ</b>. Instagram: @diadebeaute. 2024. Disponível em: https://www.instagram.com/diadebeaute. Acesso em 03 abr. 2025.
+          DIA DE BEAUTÉ. Instagram: @diadebeaute. 2024. Disponível em: https://www.instagram.com/diadebeaute. Acesso em 03 abr. 2025.
         </Text>
         <Text>
           O anúncio busca construir uma imagem do produto associada à
@@ -968,7 +968,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          Disponível em: http://portal.in.gov.br. Acesso em: 27 mar. 2025 (adaptado).
+          Disponível em: http://portal.in.gov.br. Acesso em 27 mar. 2025 (adaptado).
         </Text>
         <Text>
           O texto traz uma cronologia da linotipo, uma máquina tipográfica inventada no século XIX responsável pela dinamização da imprensa. Do ponto de vista social, a contribuição da linotipo teve impacto direto na
@@ -998,7 +998,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          AZEVEDO, A.&nbsp;<b>O Cortiço</b>. Acesso em 12 nov. 2024 (fragmento).
+          AZEVEDO, A. O Cortiço. Acesso em 12 nov. 2024 (fragmento).
         </Text>
         <Text>
           No fragmento de <i>O Cortiço</i>, de Aluísio Azevedo, apresentam-se elementos de atração e sedução, caracterizados através de uma linguagem naturalista, aqui revelada na
@@ -1036,7 +1036,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          <b>Prefeitura Municipal de Algodão de Jandaíra</b>. Instagram: @prefeituradealgodao. 2025. Disponível em: https://www.instagram.com. Acesso em 30 mar. 2025.
+          Prefeitura Municipal de Algodão de Jandaíra. Instagram: @prefeituradealgodao. 2025. Disponível em: https://www.instagram.com. Acesso em 30 mar. 2025.
         </Text>
         <Text>
           A principal finalidade dessa campanha publicitária é
@@ -1107,7 +1107,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          ALVES, C.&nbsp;<b>Navio Negreiro</b>. Disponível em: http://www.dominiopublico.gov.br/download/texto/bv000068.pdf. Acesso em 10 abr. 2025.
+          ALVES, C. Navio Negreiro. Disponível em: http://www.dominiopublico.gov.br/download/texto/bv000068.pdf. Acesso em 10 abr. 2025.
         </Text>
         <Text>
           O texto de Castro Alves tematiza o tráfico humano de forma crítica e em caráter abolicionista. Com base no trecho, a denúncia feita pelo autor
@@ -1137,7 +1137,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          MACEDO, J. M.&nbsp;<b>A Moreninha</b>. Ministério da Cultura, Fundação Biblioteca Nacional, Departamento Nacional do Livro, 1844, p. 62.
+          MACEDO, J. M. A Moreninha. Ministério da Cultura, Fundação Biblioteca Nacional, Departamento Nacional do Livro, 1844, p. 62.
         </Text>
         <Text>
           Ao abordar a figura feminina, esse fragmento romântico do século XIX reproduz uma concepção evidenciada na
@@ -1175,7 +1175,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          FRIEDRICH, C. D.&nbsp;<b>Caminhante sobre o mar de névoa</b>. 1818. Óleo sobre tela, 98,4 × 74,8 cm. Hamburger Kunsthalle, Hamburgo.
+          FRIEDRICH, C. D. Caminhante sobre o mar de névoa. 1818. Óleo sobre tela, 98,4 × 74,8 cm. Hamburger Kunsthalle, Hamburgo.
         </Text>
         <Text>
           A obra <i>Caminhante sobre o mar de névoa</i> é exemplo da influência do movimento Romântico, por apresentar a
@@ -1219,7 +1219,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          DRAGÕES DA REAL.&nbsp;<b>África, Uma Constelação de Reis e Rainhas</b>. Samba-enredo 2024. Intérpretes: Igor Federal, Vaguinho.
+          DRAGÕES DA REAL. África, Uma Constelação de Reis e Rainhas. Samba-enredo 2024. Intérpretes: Igor Federal, Vaguinho.
         </Text>
         <Text>
           O samba-enredo, por meio da ideia de alusões históricas, enfatiza uma valorização da
@@ -1256,7 +1256,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          SEIXAS, R. Metamorfose ambulante.&nbsp;<b>Ouro de Tolo</b>, 1977. Disponível em: https://genius.com/Raul-seixas-metamorfose-ambulante-lyrics. Acesso em 10 abr. 2025.
+          SEIXAS, R. Metamorfose ambulante. Ouro de Tolo, 1977. Disponível em: https://genius.com/Raul-seixas-metamorfose-ambulante-lyrics. Acesso em 10 abr. 2025.
         </Text>
         <Text>
           Nessa canção, o recurso coesivo usado estilisticamente para promover a progressão temática é o(a)
@@ -1362,7 +1362,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          ANDRADE, C. D.&nbsp;<b>O essencial em duas palavras</b>. Carta para Carlos de Paula Andrade.&nbsp;<i>[s.l.]</i>, 1964. Disponível em: https://correio.ims.com.br. Acesso em 10 abr. 2025 (adaptado).
+          ANDRADE, C. D. O essencial em duas palavras. Carta para Carlos de Paula Andrade. [s.l.], 1964. Disponível em: https://correio.ims.com.br. Acesso em 10 abr. 2025 (adaptado).
         </Text>
         <Text>
           As metáforas utilizadas no texto referem-se a uma concepção própria fundamentada na
@@ -1454,7 +1454,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          AMADO, J.&nbsp;<b>Cacau</b>. São Paulo: Companhia das Letras, 2010. p. 11.
+          AMADO, J. Cacau. São Paulo: Companhia das Letras, 2010. p. 11.
         </Text>
         <Text>
           No trecho de <i>Cacau</i>, de Jorge Amado, observa-se o uso do pretérito imperfeito. Essa escolha contribui para a estrutura narrativa ao
@@ -1504,7 +1504,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          PITTY.&nbsp;<b>Admirável chip novo</b>. Disponível em: https://www.letras.mus.br. Acesso em 03 abr. 2025 (fragmento).
+          PITTY. Admirável chip novo. Disponível em: https://www.letras.mus.br. Acesso em 03 abr. 2025 (fragmento).
         </Text>
         <Text>
           Toda sequência textual apresenta elementos estruturais que orientam sua organização e definem sua finalidade comunicativa. No trecho, a utilização da sequência textual injuntiva se revela na medida em que a autora
@@ -1545,7 +1545,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          <b>Vênus de Willendorf</b>. c. 28.000-22.000 a.C. Pedra calcária com ocre vermelho, 11 cm. Museu de História Natural de Viena, Áustria.
+          Vênus de Willendorf. c. 28.000-22.000 a.C. Pedra calcária com ocre vermelho, 11 cm. Museu de História Natural de Viena, Áustria.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -1570,7 +1570,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          <b>Vênus de Laussel</b>. c. 25.000 a.C. Baixo-relevo em calcário, 46 cm. Museu de Aquitânia, Bordeaux, França.
+          Vênus de Laussel. c. 25.000 a.C. Baixo-relevo em calcário, 46 cm. Museu de Aquitânia, Bordeaux, França.
         </Text>
         <Text>
           Essas esculturas, produzidas no Período Paleolítico, revelam
@@ -1605,7 +1605,7 @@ const questoesLinguagens = [
             fontSize: "10px",
           }}
         >
-          ROSA, G.&nbsp;<b>Primeiras Estórias</b>, 1962.
+          ROSA, G. Primeiras Estórias, 1962.
         </Text>
         <Text>
           A situação narrada revela uma tensão lastreada na perspectiva da
@@ -1711,7 +1711,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          BARK, W. C.&nbsp;<b>Origens da Idade Média</b>. São Paulo: Zahar, 1966. p. 100.
+          BARK, W. C. Origens da Idade Média. São Paulo: Zahar, 1966. p. 100.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -1736,7 +1736,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          <b>Capela do palácio de Carlos Magno em Aachen</b>, Alemanha, construída em 881 d.C.
+          Capela do palácio de Carlos Magno em Aachen, Alemanha, construída em 881 d.C.
         </Text>
         <Text>
           Considerando a realidade da medievo arcaico, os textos se aproximam ao suscitarem uma reflexão sobre o(a)
@@ -1798,7 +1798,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          RUSSO, R.&nbsp;<b>Que país é este</b>. Disponível em: https://www.letras.mus.br. Acesso em 15 out. 2024 (adaptado).
+          RUSSO, R. Que país é este. Disponível em: https://www.letras.mus.br. Acesso em 15 out. 2024 (adaptado).
         </Text>
         <Text>
           O trecho retirado da música de Renato Russo encontra respaldo no Texto I na medida em que
@@ -1828,7 +1828,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          SINGER, P.&nbsp;<b>Libertação animal</b>. Traduzido por Laura Teixeira Motta. São Paulo: Martins Fontes, 2004.
+          SINGER, P. Libertação animal. Traduzido por Laura Teixeira Motta. São Paulo: Martins Fontes, 2004.
         </Text>
         <Text>
           A crítica de Peter Singer ao especismo fundamenta-se na
@@ -1858,7 +1858,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          NERY, C.&nbsp;<b>Estatísticas Econômicas</b>. 2019. Disponível em: https://agenciadenoticias.ibge.gov.br/. Acesso em 12 nov. 2024 (adaptado).
+          NERY, C. Estatísticas Econômicas. 2019. Disponível em: https://agenciadenoticias.ibge.gov.br/. Acesso em 12 nov. 2024 (adaptado).
         </Text>
         <Text>
           O texto aborda a dinâmica do espaço agrário brasileiro, que possui consequências diretas na estrutura do campo, das quais pode-se destacar o(a)
@@ -1888,7 +1888,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          PAULO, J.&nbsp;<b>Bonde do Tigrão</b>. WhatsApp, 2024 (adaptado).
+          PAULO, J. Bonde do Tigrão. WhatsApp, 2024 (adaptado).
         </Text>
         <Text>
           Ao incorporar uma filosofia de teor otimista e pragmático, o posicionamento adotado pelo autor na colocação apresentada manifesta uma relação veemente entre
@@ -1928,7 +1928,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          BECK, A.&nbsp;<b>Tumblr</b>. Disponível em: https://tirasarmandinho.tumblr.com/. Acesso em 23 mar. 2025.
+          BECK, A. Tumblr. Disponível em: https://tirasarmandinho.tumblr.com/. Acesso em 23 mar. 2025.
         </Text>
         <Text>
           A tirinha exalta qual traço característico da coletividade?
@@ -1958,7 +1958,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          FREITAS, E.&nbsp;<b>Os movimentos das águas dos mares e oceanos</b>. Brasil Escola. Disponível em: https://brasilescola.uol.com.br. Acesso em 25 mar. 2025.
+          FREITAS, E. Os movimentos das águas dos mares e oceanos. Brasil Escola. Disponível em: https://brasilescola.uol.com.br. Acesso em 25 mar. 2025.
         </Text>
         <Text>
           Esse fenômeno geomorfológico de erosão das regiões costeiras favorece o processo de
@@ -2030,7 +2030,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          <b>População por idade e sexo</b>. Instituto Brasileiro de Geografia e Estatística, 2022.
+          População por idade e sexo. Instituto Brasileiro de Geografia e Estatística, 2022.
         </Text>
         <Text>
           A dinâmica da pirâmide etária brasileira entre os censos de 2010 e 2022 revela o(a)
@@ -2060,7 +2060,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          Jornal Eletrônico FIVJ. Disponível em: https://www.jornaleletronicofivj.com.br. Acesso em: 20 mar. 2025. (adaptado).
+          Jornal Eletrônico FIVJ. Disponível em: https://www.jornaleletronicofivj.com.br. Acesso em 20 mar. 2025. (adaptado).
         </Text>
         <Text>
           Esse texto reforça uma teoria ética ao remeter a um(a)
@@ -2090,7 +2090,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          <b>CRECI RJ</b>, 2023. Disponível em: https://creci-rj.gov.br. Acesso em: 18 nov. 2024. (adaptado).
+          CRECI RJ, 2023. Disponível em: https://creci-rj.gov.br. Acesso em 18 nov. 2024. (adaptado).
         </Text>
         <Text>
           Qual conceito sociológico melhor embasa o fenômeno descrito no texto?
@@ -2130,7 +2130,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          <b>Fonte</b>: Centro de Hidrografia da Marinha do Brasil.
+          Fonte: Centro de Hidrografia da Marinha do Brasil.
         </Text>
         <Text>
           Os dados da dinâmica das marés apresentados na tabela resultam da
@@ -2161,7 +2161,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          <b>Assembleia Geral da ONU concede status de Estado Observador não membro à Palestina</b>. Nações Unidas Brasil, 2012. Disponível em: https://brasil.un.org/. Acesso em 28 mar. 2025.
+          Assembleia Geral da ONU concede status de Estado Observador não membro à Palestina. Nações Unidas Brasil, 2012. Disponível em: https://brasil.un.org/. Acesso em 28 mar. 2025.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -2176,7 +2176,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          <b>Al menos dos muertos en un bombardeo israelí contra el hospital Nasser, el más grande del sur de Gaza</b>. El HuffPost. Tradução de ChatGPT. Disponível em: https://www.huffingtonpost.es. Acesso em: 28 mar. 2025 (adaptado).
+          Al menos dos muertos en un bombardeo israelí contra el hospital Nasser, el más grande del sur de Gaza. El HuffPost. Tradução de ChatGPT. Disponível em: https://www.huffingtonpost.es. Acesso em 28 mar. 2025 (adaptado).
         </Text>
         <Text>
           Um dos elementos constitutivos de um estado-nação, cujo reconhecimento é dificultado pela ocupação militar de Israel na Faixa de Gaza e pelos assentamentos israelenses na Cisjordânia, existentes desde a Guerra dos Seis Dias, é a
@@ -2206,7 +2206,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          ORTIZ, R.&nbsp;<b>A morte branca do feiticeiro negro: umbanda e sociedade brasileira</b>. São Paulo: Brasiliense, 1999.
+          ORTIZ, R. A morte branca do feiticeiro negro: umbanda e sociedade brasileira. São Paulo: Brasiliense, 1999.
         </Text>
         <Text>
           No cenário do Brasil do século XIX, a Umbanda e o Candomblé representam
@@ -2236,7 +2236,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          FREIRE, P.&nbsp;<b>Educação e Mudança</b>. Paz & Terra, RJ/SP, 2018, 38ª ed.
+          FREIRE, P. Educação e Mudança. Paz & Terra, RJ/SP, 2018, 38ª ed.
         </Text>
         <Text>
           Ao sustentar a importância do engajamento na transformação social, o autor compõe uma crítica à(ao)
@@ -2276,7 +2276,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          <b>Folha de São Paulo</b>, São Paulo, 15 ago. 2010, p. 2.
+          Folha de São Paulo, São Paulo, 15 ago. 2010, p. 2.
         </Text>
         <Text>
           Qual dos entraves a seguir sustenta a problemática educacional elucidada na charge?
@@ -2307,7 +2307,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          SANTOS, M.&nbsp;<b>Educação e Mudança</b>. Paz & Terra, RJ/SP, 2018, 38ª ed.
+          SANTOS, M. Educação e Mudança. Paz & Terra, RJ/SP, 2018, 38ª ed.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -2322,7 +2322,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          ARENDT, H.&nbsp;<b>A condição humana</b>. 10. ed. Rio de Janeiro: Forense Universitária, 2007 (adaptado).
+          ARENDT, H. A condição humana. 10. ed. Rio de Janeiro: Forense Universitária, 2007 (adaptado).
         </Text>
         <Text>
           Com base nos textos, a alienação e a incompreensão entre as pessoas derivam de uma limitação centrada na
@@ -2363,7 +2363,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          THEVET, F. A.&nbsp;<b>Les singularitez de la France antarctique</b>. Paris: Chez les Heritiers de Maurice de la Porte, 1558, p. 82.
+          THEVET, F. A. Les singularitez de la France antarctique. Paris: Chez les Heritiers de Maurice de la Porte, 1558, p. 82.
 
         </Text>
         <Text>
@@ -2379,7 +2379,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          STADEN, H.&nbsp;<b>Viagem ao Brasil</b>. Rio de Janeiro: Fundação Darcy Ribeiro, 2013, p. 115.
+          STADEN, H. Viagem ao Brasil. Rio de Janeiro: Fundação Darcy Ribeiro, 2013, p. 115.
         </Text>
         <Text>
           Acerca das populações nativas, habitantes do que viria a ser chamado de “América”, as posturas colonizadoras apresentadas aproximam-se, uma vez que
@@ -2460,7 +2460,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          FOUCAULT, M.&nbsp;<b>O governo de si e dos outros</b>: curso no Collège de France (1982- 1983). São Paulo: Martins Fontes, 2011, p. 17.
+          FOUCAULT, M. O governo de si e dos outros: curso no Collège de France (1982- 1983). São Paulo: Martins Fontes, 2011, p. 17.
         </Text>
         <Text>
           Ambos os textos apresentam visões sobre a docência enquanto
@@ -2491,7 +2491,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          BATAILLE, G.&nbsp;<b>O nascimento da arte</b>. Trad. e apresent. Aníbal Fernandes. Lisboa: Sistema Solar, 2015. p. 15.
+          BATAILLE, G. O nascimento da arte. Trad. e apresent. Aníbal Fernandes. Lisboa: Sistema Solar, 2015. p. 15.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -2546,7 +2546,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          HAN, B.-C.&nbsp;<b>A Socedade do Cansaço</b>. Petrópolis: Vozes, 2017.
+          HAN, B.-C. A Socedade do Cansaço. Petrópolis: Vozes, 2017.
         </Text>
         <Text>
           De acordo com o pensamento expresso por Byung-Chul Han, a lógica contemporânea de dominação
@@ -2577,7 +2577,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          TOMÁS DE AQUINO.&nbsp;<b>Suma teológica</b>. São Paulo: Loyola, 2003, p. 89.
+          TOMÁS DE AQUINO. Suma teológica. São Paulo: Loyola, 2003, p. 89.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -2592,7 +2592,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          NUNES, C. P.&nbsp;<b>Relações de Trabalho na Doutrina de Tomás de Aquino</b>: refrações Contemporâneas. Curitiba: Juruá, 2022, p. 174.
+          NUNES, C. P. Relações de Trabalho na Doutrina de Tomás de Aquino: refrações Contemporâneas. Curitiba: Juruá, 2022, p. 174.
         </Text>
         <Text>
           No contexto da filosofia medieval ocidental, os textos defendem o papel da Escolástica na formalização do ensino enquanto
@@ -2653,7 +2653,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          Disponível em: https://fundacaofhc.org.br/exposicoesvirtuais/indigenas/. Acesso em: 04 fev. 2025.
+          Disponível em: https://fundacaofhc.org.br/exposicoesvirtuais/indigenas/. Acesso em 04 fev. 2025.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -2708,7 +2708,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          KANT, I.&nbsp;<b>Fundamentação da metafísica dos costumes</b>. Trad. Paulo Quintela. Lisboa: Edições 70, 2003 (adaptado).
+          KANT, I. Fundamentação da metafísica dos costumes. Trad. Paulo Quintela. Lisboa: Edições 70, 2003 (adaptado).
         </Text>
         <Text>
           A orientação moral apresentada no texto fundamenta-se na noção de
@@ -2738,7 +2738,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          OLIVEIRA, M. F.; GERALDELLO, C. S. Maquiavel, os Realistas e a Política Internacional.&nbsp;<b>Brazilian Journal of International Relations</b>, Marília, SP, v. 2, n. 1, p. 163, 2013.
+          OLIVEIRA, M. F.; GERALDELLO, C. S. Maquiavel, os Realistas e a Política Internacional. Brazilian Journal of International Relations, Marília, SP, v. 2, n. 1, p. 163, 2013.
         </Text>
         <Text>
           O texto aborda a inovação do pensamento político de Maquiavel a partir da noção do realismo político, que expressa a
@@ -2768,7 +2768,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          RODRIGUES, E. C. As Cruzadas e as apropriações contemporâneas da Idade Média (2001 - 2020).&nbsp;<b>Epígrafe</b>, v. 10, n. 2, p. 296–329, 13 jul. 2021.
+          RODRIGUES, E. C. As Cruzadas e as apropriações contemporâneas da Idade Média (2001 - 2020). Epígrafe, v. 10, n. 2, p. 296–329, 13 jul. 2021.
         </Text>
         <Text>
           A noção de “Cruzadas” promovida pelo governo norte-americano ressalta um elemento desse período, o(a)
@@ -2798,8 +2798,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          MACHADO, C. A. R. A antiguidade tardia, a queda do Império romano e o debate sobre o “fim do mundo antigo”.&nbsp;<b>Revista de História</b>, n. 173, p. 81, 17 dez. 2015, p.107-8.
-
+          MACHADO, C. A. R. A antiguidade tardia, a queda do Império romano e o debate sobre o “fim do mundo antigo”. Revista de História, n. 173, p. 81, 17 dez. 2015, p.107-8.
         </Text>
         <Text>
           Tratando da queda do Império Romano, percebe-se que a argumentação do autor associa esse evento à
@@ -2829,8 +2828,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          PLATÃO.&nbsp;<b>A República</b>. 9 ed. Lisboa: Fundação Calouste Gulbenkian, s/d. p. 454.
-
+          PLATÃO. A República. 9 ed. Lisboa: Fundação Calouste Gulbenkian, s/d. p. 454.
         </Text>
         <Text>
           Para Platão, a noção de verdade em relação às representações artísticas se mostra alinhada à
@@ -2892,7 +2890,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          SAID, E.&nbsp;<b>Orientalismo</b>: o Oriente como invenção do Ocidente. Trad. Rosaura Eichenberg. São Paulo: Companhia das Letras, 2007, p. 29.
+          SAID, E. Orientalismo: o Oriente como invenção do Ocidente. Trad. Rosaura Eichenberg. São Paulo: Companhia das Letras, 2007, p. 29.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -2908,7 +2906,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          Disponível em: https://www.correiodopovo.com.br/blogs/juremirmachado/entrevista-com-ailton-krenak-1.524763. Acesso em: 06 fev. 2025.
+          Disponível em: https://www.correiodopovo.com.br/blogs/juremirmachado/entrevista-com-ailton-krenak-1.524763. Acesso em 06 fev. 2025.
         </Text>
         <Text>
           A análise dos textos destaca como os efeitos do Orientalismo engendram a
@@ -2970,7 +2968,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          DESCARTES, R.&nbsp;<b>Discurso do Método</b>. São Paulo: Martins Fontes, 2001, p. 75.
+          DESCARTES, R. Discurso do Método. São Paulo: Martins Fontes, 2001, p. 75.
         </Text>
         <Text>
           <b>TEXTO II</b><br /><br />
@@ -2985,7 +2983,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          POPKIN, R.&nbsp;<b>History of Scepticism from Erasmus to Spinoza</b>. Los Angeles: University of California Press, 1979 (adaptado).
+          POPKIN, R. History of Scepticism from Erasmus to Spinoza. Los Angeles: University of California Press, 1979 (adaptado).
         </Text>
         <Text>
           A partir dos textos, a concepção cartesiana de conhecimento se distingue da posição cética porque
@@ -3025,7 +3023,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          BECK, A.&nbsp;<b>Tumblr</b>. Disponível em: https://tirasarmandinho.tumblr.com/. Acesso em 23 mar. 2025.
+          BECK, A. Tumblr. Disponível em: https://tirasarmandinho.tumblr.com/. Acesso em 23 mar. 2025.
         </Text>
         <Text>
           Ao satirizar uma contradição presente na sociedade contemporânea, a charge expõe um paradoxo entre
@@ -3061,7 +3059,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          QUEIROZ, R.&nbsp;<b>O Quinze</b>. 58. ed. São Paulo: Siciliano, 1993.
+          QUEIROZ, R. O Quinze. 58. ed. São Paulo: Siciliano, 1993.
         </Text>
         <Text>
           Em meio ao tema da seca, o trecho retirado da obra de Rachel de Queiroz encapsula o drama do retirante nordestino, construindo um tipo de interação dos personagens com o seu lar. No texto, Chico Bento tenta convencer Cordulina, enquanto ela demonstra resistência à ideia de partir, o que evidencia um processo de
@@ -3091,7 +3089,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          LE GOFF, J.; RUAS, M.&nbsp;<b>A civilização do ocidente medieval</b>. Lisboa: Estampa, 1995, p. 68.
+          LE GOFF, J.; RUAS, M. A civilização do ocidente medieval. Lisboa: Estampa, 1995, p. 68.
         </Text>
         <Text>
           De acordo com o texto, infere-se que o chamado “Renascimento Urbano” teve como consequência o(a)
@@ -3121,7 +3119,7 @@ const questoesHumanas = [
             fontSize: "10px",
           }}
         >
-          ORWELL, G.&nbsp;<b>A Revolução dos Bichos</b>. Tradução de Heitor Aquino Ferreira. 1. ed. São Paulo: Companhia das Letras, 2016.
+          ORWELL, G. A Revolução dos Bichos. Tradução de Heitor Aquino Ferreira. 1. ed. São Paulo: Companhia das Letras, 2016.
         </Text>
         <Text>
           O discurso construído por Major no trecho de <i>A Revolução dos Bichos</i>, de George Orwell, melhor se associa a qual faceta da sociedade hodierna?
@@ -3318,7 +3316,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
             3. Os rascunhos e as marcações assinaladas no CADERNO DE QUESTÕES não serão considerados na avaliação.<br />
             4. Somente serão corrigidas as redações transcritas na FOLHA DE REDAÇÃO.<br />
             5. Preencha o seu gabarito a seguir à caneta, assinalando apenas uma alternativa para cada questão. Questões com nenhuma ou mais de uma alternativa assinalada serão consideradas incorretas.<br />
-            6. O tempo recomendado para simular esta aplicação é de <b>cinco horas</b>. Você poderá simular a prova ou realizá-la a longo prazo, desde que a envie antes das 17h30 do dia 26/04/2025. Fique atento ao cronômetro no canto inferior direito da sua tela. <b>Quando ele zerar, não será mais possível continuar a fazer a prova!</b><br />
+            6. O tempo recomendado para simular esta aplicação é de <b>cinco horas</b>. Você poderá simular a prova ou realizá-la a longo prazo, desde que a envie antes das 18h30 do dia 27/04/2025 (domingo). Fique atento ao cronômetro no canto inferior direito da sua tela. <b>Quando ele zerar, não será mais possível continuar a fazer a prova!</b><br />
             7. Mesmo que você imprima a prova e a obtenha fisicamente, as respostas devem ser enviadas, OBRIGATORIAMENTE, nesse formulário.<br />
             8. Dica.: Na modalidade ON-LINE, ao clicar no texto de uma alternativa, você irá "riscá-la", para que, visualmente, seja uma alternativa que você descartou. Para reverter a ação, basta clicar no texto da alternativa novamente.<br />
             9. Caso tenha alguma dúvida, sinta-se livre para enviá-la no grupo do BDT ou no contato da comissão elaboradora.<br />
