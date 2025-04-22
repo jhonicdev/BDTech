@@ -3293,8 +3293,8 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
           </div>
 
 
-          <div style={{ width: "100%", display: "flex", marginBottom: "20px" }}>
-            <b>NOME DO PARTICIPANTE:&nbsp;</b>{nomeUsuario.toUpperCase()}
+          <div style={{ width: "100%", marginBottom: "20px" }}>
+            <span style={{fontWeight: "bold"}}>NOME DO PARTICIPANTE:&nbsp;</span>{nomeUsuario.toUpperCase()}
           </div>
 
           <div style={{
