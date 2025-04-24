@@ -105,7 +105,7 @@ body {
   bottom: 90px;
   right: 24px;
   width: 100%;
-  min-width: 600px; /* Aumente a largura mínima para garantir que o chat seja mais largo */
+  min-width: 500px;
   max-height: 80vh;
   overflow: auto;
   z-index: 1000;
@@ -119,9 +119,9 @@ body {
 /* Responsividade para telas pequenas */
 @media (max-width: 767px) {
   .chat-window {
-    width: 100%; /* Agora ocupa 100% da largura da tela */
-    min-width: 0; /* Remove a largura mínima para telas menores */
-    max-width: none; /* Remove o limite máximo de largura */
+    width: 100%; 
+    min-width: 0; 
+    max-width: none; 
     bottom: 80px;
   }
 

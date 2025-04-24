@@ -11,7 +11,36 @@ const { Header, Content } = Layout;
 
 
 const notaTableData = [
-
+  {
+    key: '1',
+    area: 'Linguagens, Códigos e suas Tecnologias',
+    nota: '',
+    situacao: 'Presente',
+  },
+  {
+    key: '2',
+    area: 'Ciências Humanas e suas Tecnologias',
+    nota: '',
+    situacao: 'Presente',
+  },
+  {
+    key: '3',
+    area: 'Ciências da Natureza e suas Tecnologias',
+    nota: '',
+    situacao: 'Ainda não realizada',
+  },
+  {
+    key: '4',
+    area: 'Matemática e suas Tecnologias',
+    nota: '',
+    situacao: 'Ainda não realizada',
+  },
+  {
+    key: '5',
+    area: 'Redação',
+    nota: '',
+    situacao: 'Presente',
+  },
 ];
 
 const notaTableColumns = [
