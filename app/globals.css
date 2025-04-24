@@ -96,3 +96,39 @@ body {
   50% { opacity: 1 }
   100% { opacity: 0 }
 }
+
+
+
+/* Estilos para a janela do chat */
+.chat-window {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  width: 100%;
+  min-width: 600px; /* Aumente a largura mínima para garantir que o chat seja mais largo */
+  max-height: 80vh;
+  overflow: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 767px) {
+  .chat-window {
+    width: 100%; /* Agora ocupa 100% da largura da tela */
+    min-width: 0; /* Remove a largura mínima para telas menores */
+    max-width: none; /* Remove o limite máximo de largura */
+    bottom: 80px;
+  }
+
+  .float-button {
+    width: 50px;
+    height: 50px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
