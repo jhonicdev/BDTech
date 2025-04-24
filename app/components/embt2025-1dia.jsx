@@ -400,7 +400,7 @@ const questoesLinguagens = [
           Naquela mesa, tá faltando ele<br />
           E a saudade dele tá doendo em mim<br />
           Naquela mesa, tá faltando ele<br />
-          E a saudade dele tá doendo em mim<br /><br />
+          E a saudade dele tá doendo em mim<br />
         </Text>
         <Text
           style={{

@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Layout, Typography, Button, Card, Avatar, Space, Table } from 'antd';
-import { UserOutlined, RobotOutlined } from '@ant-design/icons';
+import { Layout, Typography, Button, Card, Avatar, Space, Table, FloatButton } from 'antd';
+import { MessageOutlined, CloseOutlined } from '@ant-design/icons';
 import Felinx from "./embt/imgs/felinx.jpg";
 
 
@@ -97,7 +97,8 @@ const botFlow = {
   notas: {
     message: (
       <div>
-        <Text>Olha aí suas notas parciais da EMBT, campeão!</Text>
+        <Text>Olha aí suas notas parciais da <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>, campeão!</Text> <br />
+        <Text>Você tem talento, hein? Parabéns! 🧡💪</Text>
         <div style={{ marginTop: 16 }}>
           <Table
             dataSource={notaTableData}
@@ -145,20 +146,29 @@ export default function Home() {
   const [messages, setMessages] = useState([]);
   const [currentStep, setCurrentStep] = useState('start');
   const [isTyping, setIsTyping] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const [hasShownStep, setHasShownStep] = useState({});
 
   useEffect(() => {
+    if (!isChatOpen) return;
+
     const step = botFlow[currentStep];
-    if (step) {
+
+    if (step && !hasShownStep[currentStep]) {
       setIsTyping(true);
 
       const typingDelay = setTimeout(() => {
         setMessages(prev => [...prev, { sender: 'bot', message: step.message, step }]);
+        setHasShownStep(prev => ({ ...prev, [currentStep]: true })); // marca como "já mostrado"
         setIsTyping(false);
       }, 2000);
 
       return () => clearTimeout(typingDelay);
     }
-  }, [currentStep]);
+  }, [currentStep, isChatOpen, hasShownStep]);
+
+
 
   const handleOptionClick = (label, nextId) => {
     setMessages(prev => [...prev, { sender: 'user', message: label }]);
@@ -166,39 +176,69 @@ export default function Home() {
   };
 
   return (
-    <Layout>
-      <Content style={{ padding: 24 }}>
-        {messages.map((msg, idx) => (
+    <>
+      {/* Botão flutuante para abrir/fechar o chat */}
+      <div
+        onClick={() => setIsChatOpen(prev => !prev)}
+        style={{
+          position: 'fixed',
+          right: 24,
+          bottom: 24,
+          width: 64,
+          height: 64,
+          borderRadius: '50%',
+          backgroundImage: `url(${Felinx.src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          border: '2px solid #b45f06',
+          boxShadow: '0 0 12px #b45f06',
+          animation: 'pulse 1.5s ease-in-out infinite',
+          cursor: 'pointer',
+          zIndex: 1100,
+        }}
+      />
 
-          <ChatMessage key={idx} sender={msg.sender} message={msg.message}>
-            {msg.sender === 'bot' && msg.step?.options && (
-              <Space wrap>
-                {msg.step.options.map((opt, i) => (
-                  <Button key={i} onClick={() => handleOptionClick(opt.label, opt.nextId)}>{opt.label}</Button>
-                ))}
-              </Space>
+      {/* Janela do chat */}
+      {isChatOpen && (
+        <div style={{
+          position: 'fixed',
+          bottom: 90,
+          right: 24,
+          width: 500,
+          maxHeight: '80vh',
+          overflow: 'auto',
+          zIndex: 1000,
+          boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+          borderRadius: 8,
+          backgroundColor: '#fff'
+        }}>
+          <Layout>
+            <Content style={{ padding: 16 }}>
+              {messages.map((msg, idx) => (
+                <ChatMessage key={idx} sender={msg.sender} message={msg.message}>
+                  {msg.sender === 'bot' && msg.step?.options && (
+                    <Space wrap>
+                      {msg.step.options.map((opt, i) => (
+                        <Button key={i} onClick={() => handleOptionClick(opt.label, opt.nextId)}>
+                          {opt.label}
+                        </Button>
+                      ))}
+                    </Space>
+                  )}
+                </ChatMessage>
+              ))}
 
-            )}
-
-            {msg.sender === 'bot' && msg.step?.icons && (
-              <Space wrap>
-                {msg.step.icons.map((opt, i) => (
-                  <Button key={i} icon={opt.icon} onClick={() => handleOptionClick(opt.label, opt.nextId)} />
-                ))}
-              </Space>
-            )}
-
-          </ChatMessage>
-        ))}
-
-        {isTyping && (
-          <ChatMessage sender="bot" message={
-            <div style={{ fontStyle: 'italic', opacity: 0.7 }}>
-              Digitando<span className="dot">.</span><span className="dot">.</span><span className="dot">.</span>
-            </div>
-          } />
-        )}
-      </Content>
-    </Layout>
+              {isTyping && (
+                <ChatMessage sender="bot" message={
+                  <div style={{ fontStyle: 'italic', opacity: 0.7 }}>
+                    Digitando<span className="dot">.</span><span className="dot">.</span><span className="dot">.</span>
+                  </div>
+                } />
+              )}
+            </Content>
+          </Layout>
+        </div>
+      )}
+    </>
   );
 }
