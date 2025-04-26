@@ -1,0 +1,512 @@
+'use client'
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { Card, Radio, Space, Typography, Modal, Button, message, Tag, Input, Table, Layout } from "antd";
+import styles from "../ombt/banco_questoes/page.module.css";
+import { FilePdfOutlined } from "@ant-design/icons";
+import Wolfo from "../imgs/wolfo.jpg";
+import pIcon from "../imgs/p.jpg";
+import jpIcon from "../imgs/jp.jpg";
+
+
+const { Content } = Layout;
+const { Text, Title } = Typography;
+
+const TituloCard = {
+  padding: "8px 16px",
+  margin: 0,
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respostas2dia, notaLinguagens = 0, notaHumanas = 0, notaNatureza = 0, notaMatematica = 0, notaRedacao = 0 }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+
+  const [userIcon, setUserIcon] = useState("");
+
+
+
+
+  function ChatMessage({ sender, message, children }) {
+    const isUser = sender === 'user';
+  
+    return (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: isUser ? 'flex-end' : 'flex-start',
+          marginBottom: 12,
+        }}
+      >
+        {isUser ? (
+          // Usuário: mensagem à direita, ícone mais à direita ainda
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-end' }}>
+            <Card style={{ maxWidth: 400, backgroundColor: '#ffd782', marginRight: 8 }}>
+              {message}
+              {children && <div style={{ marginTop: 10 }}>{children}</div>}
+            </Card>
+            <div
+              style={{
+                width: 64,
+                height: 64,
+                minWidth: 64,
+                borderRadius: '50%',
+                backgroundImage: `url(${userIcon})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                border: '1px solid #b45f06',
+                boxShadow: '0 0 15px #b45f06',
+                animation: 'pulse 1.5s ease-in-out infinite',
+              }}
+            />
+          </div>
+        ) : (
+          // Bot: ícone à esquerda, mensagem à direita
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start' }}>
+            <div
+              style={{
+                width: 64,
+                height: 64,
+                minWidth: 64,
+                borderRadius: '50%',
+                backgroundImage: `url(${Wolfo.src})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                border: '1px solid #b45f06',
+                boxShadow: '0 0 15px #b45f06',
+                animation: 'pulse 1.5s ease-in-out infinite',
+                marginRight: 8,
+              }}
+            />
+            <Card style={{ maxWidth: 400, backgroundColor: '#fff' }}>
+              {message}
+              {children && <div style={{ marginTop: 10 }}>{children}</div>}
+            </Card>
+          </div>
+        )}
+      </div>
+    );
+  }
+  
+
+
+
+  const notaTableData = [
+    {
+      key: '1',
+      area: 'Linguagens, Códigos e suas Tecnologias',
+      nota: notaLinguagens,
+      situacao: "Presente",
+    },
+    {
+      key: '2',
+      area: 'Ciências Humanas e suas Tecnologias',
+      nota: notaHumanas,
+      situacao: "Presente",
+    },
+    {
+      key: '3',
+      area: 'Ciências da Natureza e suas Tecnologias',
+      nota: '-',
+      situacao: 'Ainda não realizada',
+    },
+    {
+      key: '4',
+      area: 'Matemática e suas Tecnologias',
+      nota: '-',
+      situacao: 'Ainda não realizada',
+    },
+    {
+      key: '5',
+      area: 'Redação',
+      nota: notaRedacao,
+      situacao: "Presente",
+    },
+  ];
+  const notaTableColumns = [
+    {
+      title: 'Área de Conhecimento',
+      dataIndex: 'area',
+      key: 'area',
+    },
+    {
+      title: 'Nota',
+      dataIndex: 'nota',
+      key: 'nota',
+    },
+    {
+      title: 'Situação',
+      dataIndex: 'situacao',
+      key: 'situacao',
+    },
+  ];
+
+
+  const gabarito1dia = "DCBDCBCCCDCDEBCEAADCAAAECBCDAEDEDAEBADBCDDBAAACBBEBECDCEECCDADDCCBACCACDDDADABDB";
+
+  const botFlow = {
+    start: {
+      message: (
+        <Text>
+          Eai, {nomeUsuario}!<br />
+          Eu sou o <b>Wolfo</b>. <br /><br />
+          Acho que Felinx me falou um pouco sobre você... Ele disse que você é muito inteligente!<br />
+          Você participou do primeiro dia da <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>, né?<br />
+        </Text>
+      ),
+      options: [
+        { label: 'Sim!', nextId: 'notas' },
+        { label: 'Não.', nextId: 'end' },
+      ]
+    },
+    conversa1: {
+      message: (
+        <Text>
+          Ah, que legal! 😃<br /><br />
+          O que achou da prova?
+        </Text>
+      ),
+      options: [
+        { label: 'Gostei bastante!', nextId: 'gostou' },
+        { label: 'Não gostei tanto...', nextId: 'naoGostou' },
+      ]
+    },
+    gostou: {
+      message: (
+        <Text>
+          Show! 😎<br /><br />
+          Você acha que se saiu bem?
+        </Text>
+      ),
+      options: [
+        { label: 'Sim!', nextId: 'achaQueSeSaiuBem' },
+        { label: 'Não...', nextId: 'achaQueNaoSeSaiuBem' },
+      ]
+    },
+    naoGostou: {
+      message: (
+        <Text>
+          É, me disseram que a prova estava uma tanto complicada... 🤯<br /><br />
+          Bem, mas uma coisa é a prova e outra é o desempenho.<br /><br />
+          Você acha que se saiu bem?
+        </Text>
+      ),
+      options: [
+        { label: 'Sim!', nextId: 'achaQueSeSaiuBem' },
+        { label: 'Não...', nextId: 'achaQueNaoSeSaiuBem' },
+      ]
+    },
+    achaQueSeSaiuBem: {
+      message: (
+        <Text>
+          Nossa! 😯<br /><br />
+          Então acho que você lacrou muito, dyva.
+        </Text>
+      ),
+      options: [
+        { label: 'Valeu! O esforço de hoje é o resultado de amanhã.', nextId: 'conversa3' }
+      ]
+    },
+    achaQueNaoSeSaiuBem: {
+      message: (
+        <Text>
+          Que pena! 🫤<br /><br />
+          Coisas ruins acontecem às vezes mesmo...
+        </Text>
+      ),
+      options: [
+        { label: 'Verdade... Mesmo assim, não estou triste, pois cada fracasso ensina ao homem aquilo que ele precisava aprender.', nextId: 'conversa3' }
+      ]
+    },
+    conversa3: {
+      message: (
+        <Text>
+          Você simplesmente AR-RA-SOU com essa frase! 💫📍<br /><br />
+          Mas... E se eu dissesse que eu tenho acesso às suas notas? 👀<br />
+        </Text>
+      ),
+      options: [
+        { label: '👀...', nextId: 'conversa4' },
+      ]
+    },
+    conversa4: {
+      message: (
+        <Text>
+          Quer acessá-las?<br />
+        </Text>
+      ),
+      options: [
+        { label: 'Com certeza!', nextId: 'conversa5' },
+      ]
+    },
+    conversa5: {
+      message: (
+        <Text>
+          Tem certeza??<br />
+        </Text>
+      ),
+      options: [
+        { label: 'Sim!', nextId: '' },
+      ]
+    },
+
+
+
+
+    end: {
+      message: (
+        <Text>
+          Acho que me confundi, então...<br /><br />
+          Foi mal! 😶‍🌫️
+        </Text>
+      )
+    },
+    notas: {
+      message: (
+        <div>
+          <Text>
+            PEGAAA aí suas notas da <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>, campeão!
+          </Text><br />
+          <Text>Você tem talento, hein? PARABÉNS! 🧡💪</Text>
+
+          <div style={{ marginTop: 16 }}>
+            <div style={{ width: "100%", marginBottom: "20px" }}>
+              <span style={{ fontWeight: "bold" }}>NOME DO PARTICIPANTE:&nbsp;</span>{nomeUsuario.toUpperCase()}
+            </div>
+            <Table
+              dataSource={notaTableData}
+              columns={notaTableColumns}
+              pagination={false}
+              size="small"
+              bordered
+            />
+
+            <br />
+            <Button type="primary" onClick={showModal}>
+              📝 Seu gabarito no 1º DIA
+            </Button>
+          </div>
+        </div>
+      ),
+    },
+  };
+
+
+
+
+
+  const formatarTempo = (segundos) => {
+    const h = String(Math.floor(segundos / 3600)).padStart(2, "0");
+    const m = String(Math.floor((segundos % 3600) / 60)).padStart(2, "0");
+    const s = String(segundos % 60).padStart(2, "0");
+    return `${h}:${m}:${s}`;
+  };
+
+
+
+
+
+
+
+
+  const [messages, setMessages] = useState([]);
+  const [currentStep, setCurrentStep] = useState('start');
+  const [isTyping, setIsTyping] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const [hasShownStep, setHasShownStep] = useState({});
+
+  useEffect(() => {
+    const step = botFlow[currentStep];
+
+    if (step && !hasShownStep[currentStep]) {
+      setIsTyping(true);
+
+      const typingDelay = setTimeout(() => {
+        setMessages(prev => [...prev, { sender: 'bot', message: step.message, step }]);
+        setHasShownStep(prev => ({ ...prev, [currentStep]: true }));
+        setIsTyping(false);
+      }, 1500);
+
+      return () => clearTimeout(typingDelay);
+    }
+
+    if(idUsuario == "Pablo") setUserIcon(pIcon.src);
+    if(idUsuario == "JoaoPaulo") setUserIcon(jpIcon.src);
+  }, [currentStep, hasShownStep, userIcon, idUsuario]);
+
+  const handleOptionClick = (label, nextId) => {
+    setMessages(prev => [...prev, { sender: 'user', message: label }]);
+    setTimeout(() => setCurrentStep(nextId), 500);
+  };
+
+
+
+
+
+  let acertosLinguagens = 0;
+  let acertosHumanas = 0;
+
+  if(respostas1dia && respostas2dia) {
+    for (let i = 0; i < 40; i++) {
+      if ((respostas1dia?.[i] || "").toUpperCase() === gabarito1dia[i]) {
+        acertosLinguagens++;
+      }
+    }
+
+    for (let i = 40; i < 80; i++) {
+      if ((respostas1dia?.[i] || "").toUpperCase() === gabarito1dia[i]) {
+        acertosHumanas++;
+      }
+    }
+  }
+    
+
+
+
+  return (
+    <>
+      {/*notaLinguagens && notaHumanas && notaRedacao*/ true ? (
+        <div
+          style={{
+            width: '100%',
+            margin: '0 auto', // Centralizando o chat horizontalmente
+            backgroundColor: '#fff',
+            padding: '32px 16px',
+            boxSizing: 'border-box',
+            boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', // Sombras para dar destaque
+          }}
+        >
+          <Layout style={{ width: '100%' }}>
+
+
+
+
+
+
+            <Modal
+              title="📝 Seu gabarito no 1º dia da EMBT2025"
+              open={isModalOpen}
+              onOk={handleOk}
+              onCancel={handleCancel}
+              width={800}
+              footer={null}
+            >
+              <Card>
+                <Title level={5}>
+                  Linguagens, Códigos e suas Tecnologias - {acertosLinguagens}/40
+                </Title>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "25px" }}>
+                  {[...Array(40)].map((_, i) => (
+                    <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                      <span style={{ fontSize: "12px" }}>{String(i + 1).padStart(2, "0")}</span>
+                      <span
+                        style={{
+                          width: 40,
+                          textAlign: "center",
+                          textTransform: "uppercase",
+                          fontWeight: "bold",
+                          backgroundColor: respostas1dia[i]?.toUpperCase() === gabarito1dia[i] ? "#d4edda" : "#f8d7da",
+                          borderRadius: 4,
+                          padding: "2px 4px",
+                        }}
+                      >
+                        {respostas1dia[i] || ""}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <Title level={5}>
+                  Ciências Humanas e suas Tecnologias - {acertosHumanas}/40
+                </Title>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                  {[...Array(40)].map((_, i) => (
+                    <div key={i + 40} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                      <span style={{ fontSize: "12px" }}>{String(i + 41).padStart(2, "0")}</span>
+                      <span
+                        style={{
+                          width: 40,
+                          textAlign: "center",
+                          textTransform: "uppercase",
+                          fontWeight: "bold",
+                          backgroundColor: respostas1dia[i + 40]?.toUpperCase() === gabarito1dia[i + 40] ? "#d4edda" : "#f8d7da",
+                          borderRadius: 4,
+                          padding: "2px 4px",
+                        }}
+                      >
+                        {respostas1dia[i + 40] || ""}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            </Modal>
+
+
+
+
+
+            <Content style={{ padding: 16, width: '100%' }}>
+              {messages.map((msg, idx) => (
+                <ChatMessage key={idx} sender={msg.sender} message={msg.message}>
+                  {msg.sender === 'bot' && msg.step?.options && (
+                    <Space wrap>
+                      {msg.step.options.map((opt, i) => (
+                        <Button key={i} onClick={() => handleOptionClick(opt.label, opt.nextId)}>
+                          {opt.label}
+                        </Button>
+                      ))}
+                    </Space>
+                  )}
+                </ChatMessage>
+              ))}
+
+              {isTyping && (
+                <ChatMessage
+                  sender="bot"
+                  message={
+                    <div style={{ fontStyle: 'italic', opacity: 0.7 }}>
+                      Digitando<span className="dot">.</span><span className="dot">.</span><span className="dot">.</span>
+                    </div>
+                  }
+                />
+              )}
+            </Content>
+          </Layout>
+        </div>
+
+      ) : (
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
+          <Title level={3}>Peraí que a bosta da plataforma tá carregando... ⏳</Title>
+        </div>
+      )
+      }
+    </>
+  );
+}

@@ -3,63 +3,14 @@
 import { useState, useEffect } from 'react';
 import { Layout, Typography, Button, Card, Avatar, Space, Table, FloatButton } from 'antd';
 import { MessageOutlined, CloseOutlined } from '@ant-design/icons';
-import Felinx from "./embt/imgs/felinx.jpg";
+import Felinx from "./imgs/felinx.jpg";
 
 
 const { Text, Title } = Typography;
 const { Header, Content } = Layout;
 
 
-const notaTableData = [
-  {
-    key: '1',
-    area: 'Linguagens, Códigos e suas Tecnologias',
-    nota: '',
-    situacao: 'Presente',
-  },
-  {
-    key: '2',
-    area: 'Ciências Humanas e suas Tecnologias',
-    nota: '',
-    situacao: 'Presente',
-  },
-  {
-    key: '3',
-    area: 'Ciências da Natureza e suas Tecnologias',
-    nota: '',
-    situacao: 'Ainda não realizada',
-  },
-  {
-    key: '4',
-    area: 'Matemática e suas Tecnologias',
-    nota: '',
-    situacao: 'Ainda não realizada',
-  },
-  {
-    key: '5',
-    area: 'Redação',
-    nota: '',
-    situacao: 'Presente',
-  },
-];
 
-const notaTableColumns = [
-  {
-    title: 'Área de Conhecimento',
-    dataIndex: 'area',
-    key: 'area',
-  },
-  {
-    title: 'Nota',
-    dataIndex: 'nota',
-    key: 'nota',
-  },
-  {
-    title: 'Situação',
-    dataIndex: 'situacao',
-    key: 'situacao',
-  },
-];
 
 
 
@@ -70,7 +21,6 @@ const botFlow = {
       <Text>
         Olá! Seja bem-vindx ao <i>BDTech</i>!<br />
         Eu sou <b>Felinx</b>, assistente do BDT.<br /><br />
-        Estou por dentro de tudo sobre a <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT</span>!<br />
         Nesse exato momento, está acontecendo a aplicação do primeiro dia <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>!<br /><br />
         Tá afim de fazer? 😏<br />
       </Text>
@@ -116,29 +66,6 @@ const botFlow = {
         Ou, se preferir, posso te encaminhar para lá se você clicar <a href="/embt" style={{ color: "#b45f06" }}>aqui</a>.
       </Text>
     )
-  },
-
-
-
-
-
-
-  notas: {
-    message: (
-      <div>
-        <Text>Olha aí suas notas parciais da <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>, campeão!</Text> <br />
-        <Text>Você tem talento, hein? Parabéns! 🧡💪</Text>
-        <div style={{ marginTop: 16 }}>
-          <Table
-            dataSource={notaTableData}
-            columns={notaTableColumns}
-            pagination={false}
-            size="small"
-            bordered
-          />
-        </div>
-      </div>
-    ),
   },
 };
 

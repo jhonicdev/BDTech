@@ -3184,7 +3184,7 @@ const BolinhaLetra = ({ letra, selecionada, onSelect }) => (
 
 export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
   const [fazendoProva, setFazendoProva] = useState(false);
-  const final = new Date("2025-04-27T18:30:01");
+  const final = new Date("2025-05-02T18:30:01");
 
   const [riscar, setRiscar] = useState({});
   const [answers, setAnswers] = useState(respostas1dia);
@@ -3287,7 +3287,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
         <Space direction="vertical" size="middle" style={{ display: "flex" }}>
 
           <div className={styles.Cronometro}>
-            <Text strong style={{ color: tempoRestante < 3600 ? "red" : "white" }}>
+            <Text strong style={{ color: tempoRestante < 18000 ? "red" : "white" }}>
               ⏰ {formatarTempo(tempoRestante)}
             </Text>
           </div>

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Button, Modal, Input, Typography } from "antd";
 import Embt2025 from "../components/embt2025-1dia";
+import NotasEmbt2025 from "../components/notas-embt2025";
 
 const { Text } = Typography;
 
@@ -14,6 +15,11 @@ export default function EMBT() {
   const [usuarioNome, setUsuarioNome] = useState("Usuário desconhecido");
   const [usuarioRespostas1dia, setUsuarioRespostas1dia] = useState([]);
   const [usuarioRespostas2dia, setUsuarioRespostas2dia] = useState([]);
+  const [usuarioNotaLinguagens, setUsuarioNotaLinguagens] = useState([]);
+  const [usuarioNotaHumanas, setUsuarioNotaHumanas] = useState([]);
+  const [usuarioNotaNatureza, setUsuarioNotaNatureza] = useState([]);
+  const [usuarioNotaMatematica, setUsuarioNotaMatematica] = useState([]);
+  const [usuarioNotaRedacao, setUsuarioNotaRedacao] = useState([]);
   const [erroLogin, setErroLogin] = useState("");
 
   const fetchUsuario = async () => {
@@ -37,6 +43,11 @@ export default function EMBT() {
         setUsuarioNome(data[0].nome);
         setUsuarioRespostas1dia(data[0].respostas_embt2025dia1);
         setUsuarioRespostas2dia(data[0].respostas_embt2025dia2);
+        setUsuarioNotaLinguagens(data[0].nota_linguagens);
+        setUsuarioNotaHumanas(data[0].nota_humanas);
+        setUsuarioNotaNatureza(data[0].nota_natureza);
+        setUsuarioNotaMatematica(data[0].nota_matematica);
+        setUsuarioNotaRedacao(data[0].nota_redacao);
         setLogado(true);
         setErroLogin("");
       } else {
@@ -57,6 +68,10 @@ export default function EMBT() {
     <div className="content">
       {logado ? (
         <Embt2025 idUsuario={usuarioId} nomeUsuario={usuarioNome} respostas1dia={usuarioRespostas1dia} />
+        /*<NotasEmbt2025 
+          idUsuario={usuarioId} nomeUsuario={usuarioNome} respostas1dia={usuarioRespostas1dia} respostas2dia={usuarioRespostas2dia}
+          notaLinguagens={usuarioNotaLinguagens} notaHumanas={usuarioNotaHumanas} notaNatureza={usuarioNotaNatureza} notaMatematica={usuarioNotaMatematica} notaRedacao={usuarioNotaRedacao}
+        />*/
       ) : (
         <Modal
           title="Login"

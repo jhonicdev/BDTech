@@ -7,7 +7,7 @@ export async function POST(request) {
 
     const client = await pool.connect();
     const result = await client.query(
-      `SELECT id, nome, respostas_embt2025dia1, respostas_embt2025dia2 FROM usuario WHERE id = $1 AND senha = $2`,
+      `SELECT id, nome, respostas_embt2025dia1, respostas_embt2025dia2, nota_linguagens, nota_humanas, nota_natureza, nota_matematica, nota_redacao FROM usuario WHERE id = $1 AND senha = $2`,
       [id, senha]
     );
     client.release();
