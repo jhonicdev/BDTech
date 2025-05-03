@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Card, Radio, Space, Typography, Modal, Button, message, Tag, Input, Table, Layout } from "antd";
 import styles from "../ombt/banco_questoes/page.module.css";
-import { FilePdfOutlined } from "@ant-design/icons";
+import { FilePdfOutlined, EditOutlined, FileSearchOutlined } from "@ant-design/icons";
 import Wolfo from "../imgs/wolfo.jpg";
 import pIcon from "../imgs/p.jpg";
 import jpIcon from "../imgs/jp.jpg";
@@ -33,17 +33,27 @@ const TituloCard = {
 
 export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respostas2dia, notaLinguagens = 0, notaHumanas = 0, notaNatureza = 0, notaMatematica = 0, notaRedacao = 0 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isVistaPedagogicaOpen, setIsVistaPedagogicaOpen] = useState(false);
 
   const showModal = () => {
     setIsModalOpen(true);
+  };
+  const showVistaPedagogica = () => {
+    setIsVistaPedagogicaOpen(true);
   };
 
   const handleOk = () => {
     setIsModalOpen(false);
   };
+  const handleVistaPedagogicaOk = () => {
+    setIsVistaPedagogicaOpen(false);
+  };
 
   const handleCancel = () => {
     setIsModalOpen(false);
+  };
+  const handleVistaPedagogicaCancel = () => {
+    setIsVistaPedagogicaOpen(false);
   };
 
 
@@ -116,30 +126,202 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
 
 
 
+  const gabarito1dia = "DCBDCBCCCDCDEBCEAADCAAAECBCDAEDEDAEBADBC"+"DDBAAACBBEBECDCEECCDADDCCBACCACDDDADABDB"+"DCBDCBCCCDCDEBCEAADCAAAECBCDAEDEDAEBADBC";
+  
+
+
+
+
+
+
+
+  const [messages, setMessages] = useState([]);
+  const [currentStep, setCurrentStep] = useState('start');
+  const [isTyping, setIsTyping] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const [hasShownStep, setHasShownStep] = useState({});
+
+  useEffect(() => {
+    const step = botFlow[currentStep];
+
+    if (step && !hasShownStep[currentStep]) {
+      setIsTyping(true);
+
+      const typingDelay = setTimeout(() => {
+        setMessages(prev => [...prev, { sender: 'bot', message: step.message, step }]);
+        setHasShownStep(prev => ({ ...prev, [currentStep]: true }));
+        setIsTyping(false);
+      }, 1500);
+
+      return () => clearTimeout(typingDelay);
+    }
+
+    if(idUsuario == "Pablo") setUserIcon(pIcon.src);
+    if(idUsuario == "JoaoPaulo") setUserIcon(jpIcon.src);
+    
+  }, [currentStep, hasShownStep, userIcon, idUsuario]);
+
+  const handleOptionClick = (label, nextId) => {
+    setMessages(prev => [...prev, { sender: 'user', message: label }]);
+    setTimeout(() => setCurrentStep(nextId), 500);
+  };
+
+
+
+
+
+  let acertosLinguagens = 0;
+  let acertosHumanas = 0;
+  let discrepanciaLinguagens = [
+    5.8, 5.3, 6.6, 5.9, 6.3,
+    6.0, 5.1, 6.2, 6.5, 5.9,
+    6.0, 6.1, 5.4, 5.9, 6.7,
+    6.1, 5.9, 6.4, 6.2, 6.1,
+    6.3, 5.8, 5.9, 5.9, 6.6,
+    5.2, 6.2, 5.9, 6.4, 6.1,
+    6.0, 6.3, 5.6, 5.9, 6.8,
+    5.8, 6.5, 6.2, 5.8, 7.0,
+  ];
+  let discrepanciaHumanas = [
+    6.0, 7.0, 6.9, 5.9, 6.5,
+    6.7, 6.3, 5.6, 6.6, 6.1,
+    6.4, 6.8, 7.0, 6.6, 6.3,
+    6.0, 6.2, 6.3, 5.9, 6.7,
+    6.5, 6.4, 6.7, 6.8, 6.5,
+    6.2, 6.6, 6.3, 6.5, 6.2,
+    6.6, 6.4, 6.7, 6.4, 6.5,
+    6.6, 5.7, 5.9, 6.9, 6.0,
+  ];
+  
+
+
+  let acLinguagens = [
+    0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,
+  ];
+  let acHumanas = [
+    0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,
+  ];
+
+  if(respostas1dia && respostas2dia) {
+    for (let i = 0; i < 40; i++) {
+      if ((respostas1dia?.[i] || "").toUpperCase() === gabarito1dia[i]) {
+        acertosLinguagens++;
+        acLinguagens[i] = 1;
+      }
+    }
+
+    for (let i = 40; i < 80; i++) {
+      if ((respostas1dia?.[i] || "").toUpperCase() === gabarito1dia[i]) {
+        acertosHumanas++;
+        acHumanas[i-40] = 1;
+      }
+    }
+  }
+    
+
+  function calcularCoerenciaTRI(dificuldades, respostas) {
+    const n = dificuldades.length;
+    let totalCoerencia = 0;
+    let totalPares = 0;
+  
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        // determinando qual é a mais fácil
+        let idxFacil, idxDificil;
+        if (dificuldades[i] < dificuldades[j]) {
+          idxFacil = i;
+          idxDificil = j;
+        } else if (dificuldades[i] > dificuldades[j]) {
+          idxFacil = j;
+          idxDificil = i;
+        } else {
+          continue; // mesmo nível de dificuldade, não avaliamos
+        }
+  
+        const respFacil = respostas[idxFacil];
+        const respDificil = respostas[idxDificil];
+  
+        let coerenciaPar = 0;
+  
+        if (respFacil === 1 && respDificil === 1) {
+          coerenciaPar = 1.0;
+        } else if (respFacil === 1 && respDificil === 0) {
+          coerenciaPar = 0.9;
+        } else if (respFacil === 0 && respDificil === 1) {
+          coerenciaPar = 0.4;
+        } else if (respFacil === 0 && respDificil === 0) {
+          coerenciaPar = 0.0;
+        }
+  
+        totalCoerencia += coerenciaPar;
+        totalPares++;
+      }
+    }
+  
+    const coerenciaFinal = totalPares === 0 ? 1 : totalCoerencia / totalPares;
+  
+    return Number(coerenciaFinal.toFixed(3));
+  }
+
+
+  function calcularNota(discrepanciasArea, acArea, acertos, coerencia) {
+    if (acertos === 0) {
+      return "0";  // ou outro valor padrão que você quiser
+    }
+  
+    let base = 0;
+
+    let media = (discrepanciasArea.reduce((acc, val) => acc + val, 0))/discrepanciasArea.length;
+
+    for (let d of discrepanciasArea) {
+      base += d * 1.2;
+    }
+
+    let notaCoerencia = 0;
+    for (let i in acArea) {
+      if (acArea[i] === 1) {
+        notaCoerencia += (discrepanciasArea[i]) * (coerencia * 35 / acertos + 0.01);
+      }
+    }
+
+    // console.log(media, base, notaCoerencia, acertos * media)
+
+    notaCoerencia += acertos * media;
+
+    console.log(media, (base + notaCoerencia).toFixed(1))
+  
+    return (base + notaCoerencia).toFixed(1);
+  }
+
+
+
   const notaTableData = [
     {
       key: '1',
       area: 'Linguagens, Códigos e suas Tecnologias',
-      nota: notaLinguagens,
+      nota: calcularNota(discrepanciaLinguagens, acLinguagens, acertosLinguagens, calcularCoerenciaTRI(discrepanciaLinguagens, acLinguagens)).replace('.', ',') || "Indisponível",
       situacao: "Presente",
     },
     {
       key: '2',
       area: 'Ciências Humanas e suas Tecnologias',
-      nota: notaHumanas,
+      nota: calcularNota(discrepanciaHumanas, acHumanas, acertosHumanas, calcularCoerenciaTRI(discrepanciaHumanas, acHumanas)).replace('.', ',') || "Indisponível",
       situacao: "Presente",
     },
     {
       key: '3',
       area: 'Ciências da Natureza e suas Tecnologias',
       nota: '-',
-      situacao: 'Ainda não realizada',
+      situacao: 'Ainda não aplicada',
     },
     {
       key: '4',
       area: 'Matemática e suas Tecnologias',
       nota: '-',
-      situacao: 'Ainda não realizada',
+      situacao: 'Ainda não aplicada',
     },
     {
       key: '5',
@@ -166,16 +348,13 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
     },
   ];
 
-
-  const gabarito1dia = "DCBDCBCCCDCDEBCEAADCAAAECBCDAEDEDAEBADBCDDBAAACBBEBECDCEECCDADDCCBACCACDDDADABDB";
-
   const botFlow = {
     start: {
       message: (
         <Text>
           Eai, {nomeUsuario}!<br />
           Eu sou o <b>Wolfo</b>. <br /><br />
-          Acho que Felinx me falou um pouco sobre você... Ele disse que você é muito inteligente!<br />
+          Acho que Felinx me falou um pouco sobre você... Ouvi dizer que você é muito inteligente!<br />
           Você participou do primeiro dia da <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>, né?<br />
         </Text>
       ),
@@ -306,86 +485,23 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
               bordered
             />
 
-            <br />
+            <br /><br />
             <Button type="primary" onClick={showModal}>
-              📝 Seu gabarito no 1º DIA
+              <EditOutlined/> ACESSAR SEU GABARITO
+            </Button>
+            <br /><br />
+            <Button type="primary">
+              <FilePdfOutlined/> ACESSAR REDAÇÃO
+            </Button>
+            <br /><br />
+            <Button type="primary" onClick={showVistaPedagogica}>
+              <FileSearchOutlined /> VISTA PEDAGÓGICA
             </Button>
           </div>
         </div>
       ),
     },
   };
-
-
-
-
-
-  const formatarTempo = (segundos) => {
-    const h = String(Math.floor(segundos / 3600)).padStart(2, "0");
-    const m = String(Math.floor((segundos % 3600) / 60)).padStart(2, "0");
-    const s = String(segundos % 60).padStart(2, "0");
-    return `${h}:${m}:${s}`;
-  };
-
-
-
-
-
-
-
-
-  const [messages, setMessages] = useState([]);
-  const [currentStep, setCurrentStep] = useState('start');
-  const [isTyping, setIsTyping] = useState(false);
-  const [isChatOpen, setIsChatOpen] = useState(false);
-
-  const [hasShownStep, setHasShownStep] = useState({});
-
-  useEffect(() => {
-    const step = botFlow[currentStep];
-
-    if (step && !hasShownStep[currentStep]) {
-      setIsTyping(true);
-
-      const typingDelay = setTimeout(() => {
-        setMessages(prev => [...prev, { sender: 'bot', message: step.message, step }]);
-        setHasShownStep(prev => ({ ...prev, [currentStep]: true }));
-        setIsTyping(false);
-      }, 1500);
-
-      return () => clearTimeout(typingDelay);
-    }
-
-    if(idUsuario == "Pablo") setUserIcon(pIcon.src);
-    if(idUsuario == "JoaoPaulo") setUserIcon(jpIcon.src);
-  }, [currentStep, hasShownStep, userIcon, idUsuario]);
-
-  const handleOptionClick = (label, nextId) => {
-    setMessages(prev => [...prev, { sender: 'user', message: label }]);
-    setTimeout(() => setCurrentStep(nextId), 500);
-  };
-
-
-
-
-
-  let acertosLinguagens = 0;
-  let acertosHumanas = 0;
-
-  if(respostas1dia && respostas2dia) {
-    for (let i = 0; i < 40; i++) {
-      if ((respostas1dia?.[i] || "").toUpperCase() === gabarito1dia[i]) {
-        acertosLinguagens++;
-      }
-    }
-
-    for (let i = 40; i < 80; i++) {
-      if ((respostas1dia?.[i] || "").toUpperCase() === gabarito1dia[i]) {
-        acertosHumanas++;
-      }
-    }
-  }
-    
 
 
 
@@ -410,7 +526,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
 
 
             <Modal
-              title="📝 Seu gabarito no 1º dia da EMBT2025"
+              title={<Text>📝 SEU GABARITO NA <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span></Text>}
               open={isModalOpen}
               onOk={handleOk}
               onCancel={handleCancel}
@@ -419,7 +535,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
             >
               <Card>
                 <Title level={5}>
-                  Linguagens, Códigos e suas Tecnologias - {acertosLinguagens}/40
+                  {acertosLinguagens}/40 - Linguagens, Códigos e suas Tecnologias
                 </Title>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "25px" }}>
                   {[...Array(40)].map((_, i) => (
@@ -443,7 +559,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
                 </div>
 
                 <Title level={5}>
-                  Ciências Humanas e suas Tecnologias - {acertosHumanas}/40
+                  {acertosHumanas}/40 - Ciências Humanas e suas Tecnologias
                 </Title>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
                   {[...Array(40)].map((_, i) => (
@@ -466,11 +582,26 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
                   ))}
                 </div>
               </Card>
+
             </Modal>
+              
 
+            <Modal
+              title={<Text>VISTA PEDAGÓGICA DA <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span></Text>}
+              open={isVistaPedagogicaOpen}
+              onOk={handleVistaPedagogicaOk}
+              onCancel={handleVistaPedagogicaCancel}
+              width={800}
+              footer={null}
+            >
+              <Text>Com base nos parâmetros de elaboração, a comissão da <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>&nbsp;estabeleceu que:</Text>
+              <br/>
+              <Text>👉 com <span style={{fontWeight: "bold"}}>{acertosLinguagens} acertos</span> na prova de Linguagens, Códigos e suas Tecnologias, você obteve uma coerência de <b>{(calcularCoerenciaTRI(discrepanciaLinguagens, acLinguagens) * 100).toFixed(1)}%</b> em suas respostas.</Text>
+              <br/>
+              <Text>👉 com <span style={{fontWeight: "bold"}}>{acertosHumanas} acertos</span> na prova de Ciências Humanas e suas Tecnologias, você obteve uma coerência de <b>{(calcularCoerenciaTRI(discrepanciaHumanas, acHumanas) * 100).toFixed(1)}%</b> em suas respostas.</Text>
 
-
-
+            </Modal>
+            
 
             <Content style={{ padding: 16, width: '100%' }}>
               {messages.map((msg, idx) => (

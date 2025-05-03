@@ -8,6 +8,7 @@ import Image from "next/image";
 
 //LOGOS
 import OMBT_Logo from "./imgs/logo-ombt.png";
+import BDT_Logo from "./imgs/logo-bdt.png";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,9 +27,9 @@ export const metadata = {
 
 const BDT = {
   items: [
-    { key: "1", label: <a href="/bdt/sobre" rel="noopener noreferrer"><InfoCircleOutlined /> Sobre o grupo</a> },
-    { key: "2", label: <a href="/bdt/momentos" rel="noopener noreferrer"><StarOutlined /> Melhores momentos</a> },
-    { key: "3", label: <a target="_blank" href="https://drive.google.com/drive/folders/1Z4SifPHIe9eGyJT3DtYxI8HnpjJPzjyD?usp=sharing" rel="noopener noreferrer"><CloudUploadOutlined /> Google Drive</a> },
+    { key: "1", label: <a href="/bdt/momentos" rel="noopener noreferrer"><StarOutlined /> Melhores momentos <LockOutlined /></a> },
+    { key: "2", label: <a target="_blank" href="https://drive.google.com/drive/folders/1Z4SifPHIe9eGyJT3DtYxI8HnpjJPzjyD?usp=sharing" rel="noopener noreferrer"><CloudUploadOutlined /> Google Drive <LockOutlined /></a> },
+    { key: "3", label: <a href="/bdt/sobre" rel="noopener noreferrer"><InfoCircleOutlined /> Sobre o BDT</a> },
   ],
 };
 
@@ -59,13 +60,13 @@ export default function RootLayout({ children }) {
 
             <Dropdown menu={OMBT_Menu} trigger={["hover"]} className="Navbar-option">
               <Button type="primary">
-                <Image src={OMBT_Logo} className="Logo-OMBT" alt="Logo da OMBT"/> <DownOutlined />
+                <Image src={OMBT_Logo} className="Logo-OMBT" alt="Logo da OMBT"/>
               </Button>
             </Dropdown>
 
             <Dropdown menu={BDT} trigger={["hover"]} className="Navbar-option">
               <Button type="primary">
-                BDT <DownOutlined />
+                <Image src={BDT_Logo} className="Logo-BDT" alt="Logo do BDT"/>
               </Button>
             </Dropdown>
           </nav>

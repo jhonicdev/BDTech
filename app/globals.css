@@ -67,6 +67,11 @@ body {
   width: 100px;
 }
 
+.Logo-BDT {
+  height: 50px;
+  width: auto;
+}
+
 .content {
   position: relative;
   padding: 2em;
