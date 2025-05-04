@@ -174,23 +174,23 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
   let acertosLinguagens = 0;
   let acertosHumanas = 0;
   let discrepanciaLinguagens = [
-    5.8, 5.3, 6.6, 5.9, 6.3,
-    6.0, 5.1, 6.2, 6.5, 5.9,
-    6.0, 6.1, 5.4, 5.9, 6.7,
-    6.1, 5.9, 6.4, 6.2, 6.1,
-    6.3, 5.8, 5.9, 5.9, 6.6,
-    5.2, 6.2, 5.9, 6.4, 6.1,
-    6.0, 6.3, 5.6, 5.9, 6.8,
-    5.8, 6.5, 6.2, 5.8, 7.0,
+    5.9, 5.3, 6.8, 6.1, 6.3,
+    6.0, 5.1, 6.2, 6.6, 5.7,
+    6.0, 6.1, 5.4, 5.8, 6.6,
+    6.1, 5.9, 6.4, 6.1, 6.0,
+    6.1, 5.8, 5.9, 5.9, 6.6,
+    5.2, 6.2, 5.9, 6.1, 6.3,
+    6.2, 6.4, 5.6, 6.0, 7.1,
+    5.8, 6.6, 6.2, 6.1, 7.2,
   ];
   let discrepanciaHumanas = [
     6.0, 7.0, 6.9, 5.9, 6.5,
-    6.7, 6.3, 5.6, 6.6, 6.1,
-    6.4, 6.8, 7.0, 6.6, 6.3,
-    6.0, 6.2, 6.3, 5.9, 6.7,
-    6.5, 6.4, 6.7, 6.8, 6.5,
+    6.8, 6.3, 5.6, 6.9, 6.1,
+    6.4, 6.8, 7.3, 6.8, 6.3,
+    6.0, 6.2, 6.3, 5.9, 6.8,
+    6.5, 6.4, 6.9, 7.0, 6.5,
     6.2, 6.6, 6.3, 6.5, 6.2,
-    6.6, 6.4, 6.7, 6.4, 6.5,
+    6.9, 6.5, 6.9, 6.4, 6.5,
     6.6, 5.7, 5.9, 6.9, 6.0,
   ];
   
@@ -487,7 +487,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
 
             <br /><br />
             <Button type="primary" onClick={showModal}>
-              <EditOutlined/> ACESSAR SEU GABARITO
+              <EditOutlined/> SEU GABARITO
             </Button>
             <br /><br />
             <Button type="primary">
@@ -594,11 +594,11 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
               width={800}
               footer={null}
             >
-              <Text>Com base nos parâmetros de elaboração, a comissão da <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>&nbsp;estabeleceu que:</Text>
+              <Text>Com base nos parâmetros de elaboração e avaliação da <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>, a comissão estabeleceu que:</Text>
               <br/>
-              <Text>👉 com <span style={{fontWeight: "bold"}}>{acertosLinguagens} acertos</span> na prova de Linguagens, Códigos e suas Tecnologias, você obteve uma coerência de <b>{(calcularCoerenciaTRI(discrepanciaLinguagens, acLinguagens) * 100).toFixed(1)}%</b> em suas respostas.</Text>
+              <Text>👉 com <span style={{fontWeight: "bold"}}>{acertosLinguagens} acertos</span>, na prova de Linguagens, Códigos e suas Tecnologias, você obteve uma coerência de <b>{(calcularCoerenciaTRI(discrepanciaLinguagens, acLinguagens) * 100).toFixed(1)}%</b> em suas respostas.</Text>
               <br/>
-              <Text>👉 com <span style={{fontWeight: "bold"}}>{acertosHumanas} acertos</span> na prova de Ciências Humanas e suas Tecnologias, você obteve uma coerência de <b>{(calcularCoerenciaTRI(discrepanciaHumanas, acHumanas) * 100).toFixed(1)}%</b> em suas respostas.</Text>
+              <Text>👉 com <span style={{fontWeight: "bold"}}>{acertosHumanas} acertos</span>, na prova de Ciências Humanas e suas Tecnologias, você obteve uma coerência de <b>{(calcularCoerenciaTRI(discrepanciaHumanas, acHumanas) * 100).toFixed(1)}%</b> em suas respostas.</Text>
 
             </Modal>
             

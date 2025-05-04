@@ -3316,7 +3316,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
             3. Os rascunhos e as marcações assinaladas no CADERNO DE QUESTÕES não serão considerados na avaliação.<br />
             4. Somente serão corrigidas as redações transcritas na FOLHA DE REDAÇÃO.<br />
             5. Preencha o seu gabarito a seguir à caneta, assinalando apenas uma alternativa para cada questão. Questões com nenhuma ou mais de uma alternativa assinalada serão consideradas incorretas.<br />
-            6. O tempo recomendado para simular esta aplicação é de <b>cinco horas</b>. Você poderá simular a prova ou realizá-la a longo prazo, desde que a envie antes das 18h30 do dia 27/04/2025 (domingo). Fique atento ao cronômetro no canto inferior direito da sua tela. <b>Quando ele zerar, não será mais possível continuar a fazer a prova!</b><br />
+            6. O tempo recomendado para simular esta aplicação é de <b>cinco horas</b>. Você poderá simular a prova ou realizá-la a longo prazo, desde que a finalize antes das 18h30 do dia 11/05/2025 (domingo). Fique atento ao cronômetro no canto inferior direito da sua tela. <b>Quando ele zerar, não será mais possível continuar a fazer a prova!</b><br />
             7. Mesmo que você imprima a prova e a obtenha fisicamente, as respostas devem ser enviadas, OBRIGATORIAMENTE, nesse formulário.<br />
             8. Dica.: Na modalidade ON-LINE, ao clicar no texto de uma alternativa, você irá "riscá-la", para que, visualmente, seja uma alternativa que você descartou. Para reverter a ação, basta clicar no texto da alternativa novamente.<br />
             9. Caso tenha alguma dúvida, sinta-se livre para enviá-la no grupo do BDT ou no contato da comissão elaboradora.<br />
@@ -3598,8 +3598,18 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
         </Space>
       ) : (
         <div style={{ textAlign: "center", marginTop: "50px" }}>
-          <Title level={3}>⏳ Tempo encerrado!</Title>
-          <Text>A aplicação da prova terminou. Se você não terminou de respondê-la a tempo, suas respostas foram enviadas automaticamente.</Text>
+          <Title level={3}>⏳ Aplicação encerrada!</Title>
+          <Text>A aplicação da prova terminou. Se você não terminou de respondê-la a tempo, as respostas das questões que você fez foram enviadas automaticamente.</Text><br/><br/>
+          <Text>👉 Você poderá acessar o gabarito preliminar clicando&nbsp;<a href="https://drive.google.com/file/d/1oJ1f-s21c24leQLdQg4nyc7k0iFo_GXt/view?usp=sharing" style={{color: "orange", fontWeight: "bold"}} target="_blank">AQUI</a>.</Text><br/>
+          <Text>👉 Você poderá enviar um e-mail para contestar o gabarito preliminar clicando&nbsp;
+            <a
+              style={{color: "orange", fontWeight: "bold"}}
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=grupobondedotigrao@gmail.com&su=Contestação%20do%20gabarito%20preliminar%20do%20primeiro%20dia%20de%20provas%20da%20EMBT2025&body=Olá,%0A%0AGostaria%20de%20contestar%20a%20questão%20[informar número da questão],%20presente%20no%20primeiro%20dia%20de%20provas%20da%20EMBT2025.%0AA questão apresenta o seguinte problema: [explicar, detalhadamente, o problema que torna a questão, bem como seu gabarito, inconsistentes].%0A%0AAtenciosamente,%0A[seu nome]."
+              target="_blank" rel="noopener noreferrer"
+            >
+              AQUI
+            </a>.
+          </Text><br/>
         </div>
       )
       }
