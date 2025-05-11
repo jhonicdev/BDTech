@@ -226,7 +226,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
     const n = dificuldades.length;
     let totalCoerencia = 0;
     let totalPares = 0;
-  
+    
     for (let i = 0; i < n; i++) {
       for (let j = i + 1; j < n; j++) {
         // determinando qual é a mais fácil
@@ -238,7 +238,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
           idxFacil = j;
           idxDificil = i;
         } else {
-          continue; // mesmo nível de dificuldade, não avaliamos
+          continue; // mesmo nível de dificuldade/anulações, não avaliamos
         }
   
         const respFacil = respostas[idxFacil];
@@ -282,7 +282,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
 
     let notaCoerencia = 0;
     for (let i in acArea) {
-      if (acArea[i] === 1) {
+      if (acArea[i] === 1 && discrepanciasArea[i] !== undefined) {
         notaCoerencia += (discrepanciasArea[i]) * (coerencia * 35 / acertos + 0.01);
       }
     }

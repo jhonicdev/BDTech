@@ -3184,7 +3184,7 @@ const BolinhaLetra = ({ letra, selecionada, onSelect }) => (
 
 export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
   const [fazendoProva, setFazendoProva] = useState(false);
-  const final = new Date("2025-05-11T18:30:01");
+  const final = new Date("2025-05-11T23:59:59");
 
   const [riscar, setRiscar] = useState({});
   const [answers, setAnswers] = useState(respostas1dia);
@@ -3316,9 +3316,9 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
             3. Os rascunhos e as marcações assinaladas no CADERNO DE QUESTÕES não serão considerados na avaliação.<br />
             4. Somente serão corrigidas as redações transcritas na FOLHA DE REDAÇÃO.<br />
             5. Preencha o seu gabarito a seguir à caneta, assinalando apenas uma alternativa para cada questão. Questões com nenhuma ou mais de uma alternativa assinalada serão consideradas incorretas.<br />
-            6. O tempo recomendado para simular esta aplicação é de <b>cinco horas</b>. Você poderá simular a prova ou realizá-la a longo prazo, desde que a finalize antes das 18h30 do dia 11/05/2025 (domingo). Fique atento ao cronômetro no canto inferior direito da sua tela. <b>Quando ele zerar, não será mais possível continuar a fazer a prova!</b><br />
+            6. O tempo recomendado para simular esta aplicação é de <b>cinco horas</b>. Você poderá simular a prova ou realizá-la a longo prazo, desde que a finalize antes das 23h59 do dia 11/05/2025 (domingo). Fique atento ao cronômetro no canto inferior direito da sua tela. <b>Quando ele zerar, não será mais possível continuar a fazer a prova!</b><br />
             7. Mesmo que você imprima a prova e a obtenha fisicamente, as respostas devem ser enviadas, OBRIGATORIAMENTE, nesse formulário.<br />
-            8. Dica.: Na modalidade ON-LINE, ao clicar no texto de uma alternativa, você irá "riscá-la", para que, visualmente, seja uma alternativa que você descartou. Para reverter a ação, basta clicar no texto da alternativa novamente.<br />
+            8. Dica.: Na modalidade ON-LINE, ao clicar no texto de uma alternativa, você irá "riscá-la", para que, visualmente, seja uma alternativa descartada. Para reverter a ação, basta clicar no texto da alternativa novamente.<br />
             9. Caso tenha alguma dúvida, sinta-se livre para enviá-la no grupo do BDT ou no contato da comissão elaboradora.<br />
             <i>Boa prova!</i>
           </Text>
