@@ -3184,7 +3184,7 @@ const BolinhaLetra = ({ letra, selecionada, onSelect }) => (
 
 export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
   const [fazendoProva, setFazendoProva] = useState(false);
-  const final = new Date("2025-05-11T23:59:59");
+  const final = new Date("2025-05-25T18:30:01");
 
   const [riscar, setRiscar] = useState({});
   const [answers, setAnswers] = useState(respostas1dia);
