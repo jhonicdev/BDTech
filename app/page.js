@@ -3,7 +3,9 @@
 import { useState, useEffect } from 'react';
 import { Layout, Typography, Button, Card, Avatar, Space, Table, FloatButton } from 'antd';
 import { MessageOutlined, CloseOutlined } from '@ant-design/icons';
+import Image from "next/image";
 import Felinx from "./imgs/felinx.jpg";
+import UFAJ_Logo from "./imgs/logo-ufaj.png";
 
 
 const { Text, Title } = Typography;
@@ -20,15 +22,12 @@ const botFlow = {
     message: (
       <Text>
         Olá! Seja bem-vindx ao <i>BDTech</i>!<br />
-        Eu sou <b>Felinx</b>, assistente do BDT.<br /><br />
-        Nesse exato momento, está acontecendo a aplicação do primeiro dia <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>!<br /><br />
-        Tá afim de fazer? 😏<br />
+        Eu sou <b>Felinx</b>, assistente do BDT.<br />
+        Eu te ajudo a ficar por dentro de tudo que está acontecendo no BDT!<br/><br />
+        <span style={{color: "red"}}>Infelizmente, estou em período de manutenção e não vou conseguir te atender no momento... :(</span>
+        <br />
       </Text>
-    ),
-    options: [
-      { label: 'Bora!', nextId: 'credenciais' },
-      { label: 'Tô afim não...', nextId: 'ignorar' },
-    ]
+    )
   },
   credenciais: {
     message: (
@@ -133,6 +132,28 @@ export default function Home() {
 
   return (
     <>
+    <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
+      <a href="https://forms.gle/Yc2LEWY7zBT84CRC8" target="_blank">
+        <Image src={UFAJ_Logo} alt="Logo da UFAJ"
+          style={{maxHeight: "300px", width: "auto"}}
+        />
+      </a>
+      <p style={{textAlign: "center"}}>
+        🚨🚨🚨🚨🚨<br/>
+        É com muito prazer que a reitoria da UFAJ anuncia que a 1º fase do <b>#vestUFAJ</b> está disponível!<br/>
+        Para consultar o formulário da prova, <u>basta clicar na logo acima</u>.<br/>
+        Desejamos a tod@s uma ótima prova e #vemserUFAJ! 💛🧡🤍<br/>
+      </p>
+    </div>
+      
+
+
+
+
+
+
+
+
       {/* Botão flutuante para abrir/fechar o chat */}
       <div
         onClick={() => setIsChatOpen(prev => !prev)}
@@ -155,6 +176,7 @@ export default function Home() {
       />
 
       {/* Janela do chat */}
+      
       {isChatOpen && (
         <div
           className="chat-window"

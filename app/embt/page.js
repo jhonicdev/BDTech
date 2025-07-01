@@ -67,11 +67,12 @@ export default function EMBT() {
   return (
     <div className="content">
       {logado ? (
-        <Embt2025 idUsuario={usuarioId} nomeUsuario={usuarioNome} respostas1dia={usuarioRespostas1dia} />
-        /*<NotasEmbt2025 
+        /*<Embt2025 idUsuario={usuarioId} nomeUsuario={usuarioNome} respostas1dia={usuarioRespostas1dia} />
+        <NotasEmbt2025 
           idUsuario={usuarioId} nomeUsuario={usuarioNome} respostas1dia={usuarioRespostas1dia} respostas2dia={usuarioRespostas2dia}
           notaLinguagens={usuarioNotaLinguagens} notaHumanas={usuarioNotaHumanas} notaNatureza={usuarioNotaNatureza} notaMatematica={usuarioNotaMatematica} notaRedacao={usuarioNotaRedacao}
         />*/
+        <>Indisponível!</>
       ) : (
         <Modal
           title="Login"

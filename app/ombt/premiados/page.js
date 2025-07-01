@@ -51,31 +51,37 @@ export default function Materiais() {
                     <InfoCircleOutlined onClick={() => abrirModal("4OMBT")} style={{ marginLeft: "20px" }} />
                 </Title>
                 <Divider />
-                <Table dataSource={Premiados_4OMBT} columns={columns} />
+                <Table dataSource={Premiados_4OMBT} columns={columns} pagination={false}/>
             </div>
-
+            
+            <br />
+            
             <div className={styles["Materiais-Ano"]}>
                 <Title level={2}>3ª OMBT 2024 | NÍVEL T
                     <InfoCircleOutlined onClick={() => abrirModal("3OMBT")} style={{ marginLeft: "20px" }} />
                 </Title>
                 <Divider />
-                <Table dataSource={Premiados_3OMBT} columns={columns} />
+                <Table dataSource={Premiados_3OMBT} columns={columns} pagination={false}/>
             </div>
+            
+            <br />
 
             <div className={styles["Materiais-Ano"]}>
                 <Title level={2}>2ª OMBT 2023 | NÍVEL T
                     <InfoCircleOutlined onClick={() => abrirModal("2OMBT")} style={{ marginLeft: "20px" }} />
                 </Title>
                 <Divider />
-                <Table dataSource={Premiados_2OMBT} columns={columns} />
+                <Table dataSource={Premiados_2OMBT} columns={columns} pagination={false}/>
             </div>
 
+            <br />
+            
             <div className={styles["Materiais-Ano"]}>
                 <Title level={2}>1ª OMBT 2023 | NÍVEL A
                     <InfoCircleOutlined onClick={() => abrirModal("1OMBT")} style={{ marginLeft: "20px" }} />
                 </Title>
                 <Divider />
-                <Table dataSource={Premiados_1OMBT} columns={columns} />
+                <Table dataSource={Premiados_1OMBT} columns={columns} pagination={false}/>
             </div>
 
 
