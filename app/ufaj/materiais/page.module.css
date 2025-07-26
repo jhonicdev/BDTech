@@ -1,0 +1,38 @@
+.Materiais-Ano {
+    margin-bottom: 60px;
+}
+
+.Provas-Gabaritos {
+    width: 100%; /* Certifique-se de que a largura total não ultrapasse 100% */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 10px; /* Adiciona um pouco de padding para evitar que o conteúdo encoste nas bordas */
+    box-sizing: border-box; /* Inclui o padding na largura total */
+}
+
+.Prova-Gabarito {
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(225, 225, 225);
+    border-radius: 20px;
+    height: 120px;
+    width: 150px;
+    box-sizing: border-box; /* Certifica-se de que a largura considera o padding */
+    transition: background-color 0.3s ease; /* Adiciona transição suave na cor de fundo */
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        width: 150px; /* Reduz a largura em telas menores */
+        height: 200px; /* Ajusta a altura para não sobrecarregar a tela */
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(205, 205, 205);
+    }
+}

@@ -5,7 +5,6 @@ import { Layout, Typography, Button, Card, Avatar, Space, Table, FloatButton } f
 import { MessageOutlined, CloseOutlined } from '@ant-design/icons';
 import Image from "next/image";
 import Felinx from "./imgs/felinx.jpg";
-import UFAJ_Logo from "./imgs/logo-ufaj.png";
 
 
 const { Text, Title } = Typography;
@@ -132,19 +131,6 @@ export default function Home() {
 
   return (
     <>
-    <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
-      <a href="https://forms.gle/Yc2LEWY7zBT84CRC8" target="_blank">
-        <Image src={UFAJ_Logo} alt="Logo da UFAJ"
-          style={{maxHeight: "300px", width: "auto"}}
-        />
-      </a>
-      <p style={{textAlign: "center"}}>
-        🚨🚨🚨🚨🚨<br/>
-        É com muito prazer que a reitoria da UFAJ anuncia que a 1º fase do <b>#vestUFAJ</b> está disponível!<br/>
-        Para consultar o formulário da prova, <u>basta clicar na logo acima</u>.<br/>
-        Desejamos a tod@s uma ótima prova e #vemserUFAJ! 💛🧡🤍<br/>
-      </p>
-    </div>
       
 
 

@@ -7,6 +7,7 @@ import {
 import Image from "next/image";
 
 //LOGOS
+import UFAJ_Logo from "./imgs/logo-ufaj.png";
 import OMBT_Logo from "./imgs/logo-ombt.png";
 import BDT_Logo from "./imgs/logo-bdt.png";
 
@@ -43,6 +44,15 @@ const OMBT_Menu = {
   ],
 };
 
+const UFAJ_Menu = {
+  items: [
+    { key: "1", label: <a href="/ufaj/materiais" rel="noopener noreferrer"><FileTextOutlined /> Provas e soluções</a> },
+    { key: "2", label: <a href="/ufaj/premiados" rel="noopener noreferrer"><TrophyOutlined /> Premiados</a> },
+    { key: "3", label: <a href="/ufaj/sobre" rel="noopener noreferrer"><InfoCircleOutlined /> Sobre a UFAJ</a> },
+  ],
+};
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -53,25 +63,32 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header>
-            <nav className="Navbar">
+          <nav className="Navbar">
+
             <Button href="/embt" type="primary" className="Navbar-option">
-              <span style={{color: "#b45f06"}}>EMBT<i style={{fontWeight: "normal", color: "white"}}>2025</i></span> <LockOutlined />
+              <span style={{ color: "#b45f06" }}>EMBT<i style={{ fontWeight: "normal", color: "white" }}>2025</i></span> <LockOutlined />
             </Button>
+            
+            <Dropdown menu={UFAJ_Menu} trigger={["hover"]} className="Navbar-option">
+              <Button type="primary">
+                <Image src={UFAJ_Logo} className="Logo-UFAJ" alt="Logo da UFAJ" />
+              </Button>
+            </Dropdown>
 
             <Dropdown menu={OMBT_Menu} trigger={["hover"]} className="Navbar-option">
               <Button type="primary">
-                <Image src={OMBT_Logo} className="Logo-OMBT" alt="Logo da OMBT"/>
+                <Image src={OMBT_Logo} className="Logo-OMBT" alt="Logo da OMBT" />
               </Button>
             </Dropdown>
 
             <Dropdown menu={BDT} trigger={["hover"]} className="Navbar-option">
               <Button type="primary">
-                <Image src={BDT_Logo} className="Logo-BDT" alt="Logo do BDT"/>
+                <Image src={BDT_Logo} className="Logo-BDT" alt="Logo do BDT" />
               </Button>
             </Dropdown>
           </nav>
         </header>
-        
+
         {children}
       </body>
     </html>

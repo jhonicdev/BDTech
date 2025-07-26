@@ -4,8 +4,11 @@ import React, { useState } from "react";
 import { Button, Modal, Input, Typography } from "antd";
 import Embt2025 from "../components/embt2025-1dia";
 import NotasEmbt2025 from "../components/notas-embt2025";
+import LoginModal from "../components/LoginModal";
+
 
 const { Text } = Typography;
+
 
 export default function EMBT() {
   const [id, setId] = useState("");
@@ -71,42 +74,22 @@ export default function EMBT() {
         <NotasEmbt2025 
           idUsuario={usuarioId} nomeUsuario={usuarioNome} respostas1dia={usuarioRespostas1dia} respostas2dia={usuarioRespostas2dia}
           notaLinguagens={usuarioNotaLinguagens} notaHumanas={usuarioNotaHumanas} notaNatureza={usuarioNotaNatureza} notaMatematica={usuarioNotaMatematica} notaRedacao={usuarioNotaRedacao}
-        />*/
+        />
+        MANTENHA ESSE TRECHO COMENTADO
+        */
         <>Indisponível!</>
       ) : (
-        <Modal
-          title="Login"
-          open={!logado}
-          footer={null}
-          closable={false}
-          centered
-        >
-          <form onSubmit={onLogin}>
-            <Input
-              placeholder="Usuário"
-              maxLength={10}
-              value={id}
-              onChange={(e) => setId(e.target.value)}
-              style={{ marginBottom: 10 }}
-            />
-            <Input.Password
-              placeholder="Senha"
-              maxLength={100}
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
-              style={{ marginBottom: 10 }}
-            />
-            {erroLogin && (
-              <Text type="danger" style={{ display: "block", marginBottom: 10 }}>
-                {erroLogin}
-              </Text>
-            )}
-            <Button type="primary" htmlType="submit" block>
-              Acessar
-            </Button>
-          </form>
-        </Modal>
+        <LoginModal
+          visible={!logado}
+          id={id}
+          setId={setId}
+          senha={senha}
+          setSenha={setSenha}
+          erroLogin={erroLogin}
+          onLogin={onLogin}
+        />
       )}
     </div>
   );
 }
+
