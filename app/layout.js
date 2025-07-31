@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Menu, Dropdown, Button } from "antd";
 import {
-  DownOutlined, FileAddOutlined, FileTextOutlined, InfoCircleOutlined, StarOutlined, CloudUploadOutlined, TrophyOutlined, BookOutlined, LockOutlined
+  DownOutlined, FileAddOutlined, FileTextOutlined, InfoCircleOutlined, StarOutlined, CloudUploadOutlined, TrophyOutlined, BookOutlined, LockOutlined, HighlightOutlined
 } from "@ant-design/icons";
 import Image from "next/image";
 
@@ -30,7 +30,8 @@ const BDT = {
   items: [
     { key: "1", label: <a href="/bdt/momentos" rel="noopener noreferrer"><StarOutlined /> Melhores momentos <LockOutlined /></a> },
     { key: "2", label: <a target="_blank" href="https://drive.google.com/drive/folders/1Z4SifPHIe9eGyJT3DtYxI8HnpjJPzjyD?usp=sharing" rel="noopener noreferrer"><CloudUploadOutlined /> Google Drive <LockOutlined /></a> },
-    { key: "3", label: <a href="/bdt/sobre" rel="noopener noreferrer"><InfoCircleOutlined /> Sobre o BDT</a> },
+    { key: "3", label: <a target="_blank" href="" rel="noopener noreferrer"><HighlightOutlined /> Acervo artístico <LockOutlined /></a> },
+    { key: "4", label: <a href="/bdt/sobre" rel="noopener noreferrer"><InfoCircleOutlined /> Sobre o BDT</a> },
   ],
 };
 
@@ -38,8 +39,8 @@ const OMBT_Menu = {
   items: [
     { key: "1", label: <a href="/ombt/materiais" rel="noopener noreferrer"><FileTextOutlined /> Provas e soluções</a> },
     { key: "2", label: <a href="/ombt/premiados" rel="noopener noreferrer"><TrophyOutlined /> Premiados</a> },
-    { key: "3", label: <a href="/ombt/simulado" rel="noopener noreferrer"><FileAddOutlined /> Gerar simulado</a> },
-    { key: "4", label: <a href="/ombt/banco_questoes" rel="noopener noreferrer"><BookOutlined /> Banco de questões</a> },
+    { key: "3", label: <a href="/ombt/banco_questoes" rel="noopener noreferrer"><BookOutlined /> Banco de questões</a> },
+    { key: "4", label: <a href="/ombt/simulado" rel="noopener noreferrer"><FileAddOutlined /> Gerar simulado</a> },
     { key: "5", label: <a href="/ombt/sobre" rel="noopener noreferrer"><InfoCircleOutlined /> Sobre a OMBT</a> },
   ],
 };

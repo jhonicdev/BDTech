@@ -38,28 +38,56 @@ body {
   padding-right: 1em;
   position: sticky;
   width: 100vw;
-  height: 70px;
+  height: auto;
   background-color: orange;
   gap: 3vw;
 
-  & .ant-btn:focus, & .ant-btn:hover, & .ant-btn {
+  & .ant-btn:focus,
+  & .ant-btn:hover,
+  & .ant-btn {
     outline: none;
     box-shadow: none;
     border-color: transparent !important;
     box-shadow: none;
   }
+
   & .ant-btn:hover {
     cursor: pointer;
     background-color: rgb(203, 132, 0) !important;
   }
 }
 
+.Navbar {
+  flex-direction: row;
+  overflow-x: auto;
+  /* permite rolar horizontalmente */
+  white-space: nowrap;
+  /* impede quebra de linha */
+  -webkit-overflow-scrolling: touch;
+  /* rolagem suave no iOS */
+  scrollbar-width: none;
+  /* oculta no Firefox */
+  gap: 1em;
+  background-color: orange;
+  padding: 0 1em;
+}
+
+.Navbar::-webkit-scrollbar {
+  display: none;
+  /* oculta a barra de rolagem no Chrome/Safari */
+}
+
 .Navbar-option {
+  flex-shrink: 0;
+  /* impede compressão */
+  white-space: nowrap;
+  /* impede quebra de texto */
   background-color: orange;
   height: 60px;
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: bolder;
   border: none;
+  padding: 0 1em;
 }
 
 .Logo-UFAJ {
@@ -83,13 +111,14 @@ body {
 }
 
 
-@media (max-width: 650px) {
+@media (max-width: 1500px) {
   .Navbar {
-    height: 150px;
-    align-items: flex-start;
+    height: auto;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 }
-
 .dot {
   animation: blink 1.4s infinite;
 }
@@ -97,14 +126,23 @@ body {
 .dot:nth-child(2) {
   animation-delay: 0.2s;
 }
+
 .dot:nth-child(3) {
   animation-delay: 0.4s;
 }
 
 @keyframes blink {
-  0% { opacity: 0 }
-  50% { opacity: 1 }
-  100% { opacity: 0 }
+  0% {
+    opacity: 0
+  }
+
+  50% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0
+  }
 }
 
 
@@ -129,9 +167,9 @@ body {
 /* Responsividade para telas pequenas */
 @media (max-width: 767px) {
   .chat-window {
-    width: 100%; 
-    min-width: 0; 
-    max-width: none; 
+    width: 100%;
+    min-width: 0;
+    max-width: none;
     bottom: 80px;
   }
 
