@@ -27,8 +27,8 @@
 
     /* Responsividade */
     @media (max-width: 768px) {
-        width: 150px; /* Reduz a largura em telas menores */
-        height: 200px; /* Ajusta a altura para não sobrecarregar a tela */
+        min-width: 130px; /* Reduz a largura em telas menores */
+        min-height: 120px; /* Ajusta a altura para não sobrecarregar a tela */
     }
 
     &:hover {

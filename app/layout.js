@@ -7,6 +7,7 @@ import {
 import Image from "next/image";
 
 //LOGOS
+import BDT_Arena from "./imgs/bdt-arena.png";
 import UFAJ_Logo from "./imgs/logo-ufaj.png";
 import OMBT_Logo from "./imgs/logo-ombt.png";
 import BDT_Logo from "./imgs/logo-bdt.png";
@@ -37,7 +38,7 @@ const BDT = {
 
 const OMBT_Menu = {
   items: [
-    { key: "1", label: <a href="/ombt/materiais" rel="noopener noreferrer"><FileTextOutlined /> Provas e soluções</a> },
+    { key: "1", label: <a href="/ombt/materiais" rel="noopener noreferrer"><FileTextOutlined /> Materiais</a> },
     { key: "2", label: <a href="/ombt/premiados" rel="noopener noreferrer"><TrophyOutlined /> Premiados</a> },
     { key: "3", label: <a href="/ombt/banco_questoes" rel="noopener noreferrer"><BookOutlined /> Banco de questões</a> },
     { key: "4", label: <a href="/ombt/simulado" rel="noopener noreferrer"><FileAddOutlined /> Gerar simulado</a> },
@@ -65,6 +66,9 @@ export default function RootLayout({ children }) {
       >
         <header>
           <nav className="Navbar">
+            <Button href="/arena" type="primary" className="Navbar-option">
+              <Image src={BDT_Arena} className="Logo-BDT-Arena" alt="Logo da Arena BDT" />
+            </Button>
 
             <Button href="/embt" type="primary" className="Navbar-option">
               <span style={{ color: "#b45f06" }}>EMBT<i style={{ fontWeight: "normal", color: "white" }}>2025</i></span> <LockOutlined />

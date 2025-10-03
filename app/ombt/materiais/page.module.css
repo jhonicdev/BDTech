@@ -20,15 +20,15 @@
     align-items: center;
     background-color: rgb(225, 225, 225);
     border-radius: 20px;
-    height: 200px;
+    height: 150px;
     width: 150px;
     box-sizing: border-box; /* Certifica-se de que a largura considera o padding */
     transition: background-color 0.3s ease; /* Adiciona transição suave na cor de fundo */
 
     /* Responsividade */
-    @media (max-width: 768px) {
-        width: 150px; /* Reduz a largura em telas menores */
-        height: 200px; /* Ajusta a altura para não sobrecarregar a tela */
+    @media (max-width: 360px) {
+        width: 120px; /* Reduz a largura em telas menores */
+        height: 150px; /* Ajusta a altura para não sobrecarregar a tela */
     }
 
     &:hover {

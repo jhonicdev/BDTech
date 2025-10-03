@@ -30,6 +30,16 @@ export default function Materiais() {
                         <Title level={5}>SOLUÇÃO</Title>
                         <Text italic>Primeira Fase</Text>
                     </a>
+                    <a className={styles["Prova-Gabarito"]} target="_blank" href="https://forms.gle/vszbHsEXf16U144m7">
+                        <FileTextOutlined style={{ color: "orange" }} />
+                        <Title level={5} strong>PROVA</Title>
+                        <Text italic>Segunda Fase</Text>
+                    </a>
+                    <a className={styles["Prova-Gabarito"]} target="_blank" href="https://youtu.be/ZMFX84cZpPM?si=th0a48lQwpbHUCY9">
+                        <FileTextOutlined style={{ color: "orange" }} />
+                        <Title level={5}>SOLUÇÃO</Title>
+                        <Text italic>Primeira Fase</Text>
+                    </a>
                 </section>
             ),
         },
@@ -37,16 +47,7 @@ export default function Materiais() {
 
     return (
         <div className="content">
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column" }}>
-                <p style={{ textAlign: "center" }}>
-                    🚨🚨🚨🚨🚨<br />
-                    É com muito prazer que a reitoria da UFAJ anuncia que a 1º fase do <b>#vestUFAJ</b> está disponível!<br />
-                    Desejamos a tod@s uma ótima prova e #vemserUFAJ! 💛🧡🤍<br />
-                </p>
-            </div>
-            <br/>
             <Collapse items={items} accordion />
-
             
 
         </div>

@@ -20,7 +20,7 @@ export default function Sobre_OMBT() {
         </Text>
         <p></p>
         <Text>
-            <strong>Elaborada por </strong><i>jonataspereira0712@gmail.com</i>
+            <strong>Elaborada por </strong> Jônatas Nicolau
         </Text>
         <p></p>
         <Text>

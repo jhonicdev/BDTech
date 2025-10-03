@@ -74,10 +74,8 @@ export default function EMBT() {
         <NotasEmbt2025 
           idUsuario={usuarioId} nomeUsuario={usuarioNome} respostas1dia={usuarioRespostas1dia} respostas2dia={usuarioRespostas2dia}
           notaLinguagens={usuarioNotaLinguagens} notaHumanas={usuarioNotaHumanas} notaNatureza={usuarioNotaNatureza} notaMatematica={usuarioNotaMatematica} notaRedacao={usuarioNotaRedacao}
-        />
-        MANTENHA ESSE TRECHO COMENTADO
-        */
-        <>Indisponível!</>
+        />*/
+        <p>Indisponível! Aguarde algum pronunciamento da Comissão Organizadora da EMBT.</p>
       ) : (
         <LoginModal
           visible={!logado}

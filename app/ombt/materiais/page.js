@@ -3,12 +3,28 @@ import styles from "./page.module.css";
 import { Collapse, Divider, Tag } from "antd";
 import Title from 'antd/lib/typography/Title';
 import Text from 'antd/lib/typography/Text';
-import { FileTextOutlined } from "@ant-design/icons";
+import { FileTextOutlined, FileSearchOutlined } from "@ant-design/icons";
 
 const { Panel } = Collapse;
 
 export default function Materiais() {
     const items = [
+        {
+            key: "5",
+            label: (
+                <Text style={{ fontWeight: "bold" }}>
+                    5ª OMBT 2026&nbsp;&nbsp;&nbsp;<Tag style={{ color: "red" }}>EM BREVE!</Tag>
+                </Text>
+            ),
+            children: (
+                <section className={styles["Provas-Gabaritos"]}>
+                    <a className={styles["Prova-Gabarito"]} target="_blank" href="https://docs.google.com/document/d/1n6qoTZXlvek8Jem0aFY4xC16VxWs6po-RA4F6s4fPvU/edit?tab=t.0">
+                        <FileSearchOutlined style={{ color: "orange", fontSize: "22px" }} />
+                        <Title level={5}>REGULAMENTO OFICIAL</Title>
+                    </a>
+                </section>
+            ),
+        },
         {
             key: "4",
             label: (

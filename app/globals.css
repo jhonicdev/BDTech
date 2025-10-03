@@ -19,6 +19,11 @@
   }
 }
 
+@font-face {
+  font-family: 'Minecraftia';
+  src: url('/fonts/Minecraftia-Regular.ttf') format('truetype');
+}
+
 body {
   overflow-x: hidden;
   background: white;
@@ -102,6 +107,11 @@ body {
 
 .Logo-BDT {
   height: 50px;
+  width: auto;
+}
+
+.Logo-BDT-Arena {
+  height: 40px;
   width: auto;
 }
 
