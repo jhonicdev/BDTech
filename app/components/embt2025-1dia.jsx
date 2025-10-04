@@ -27,6 +27,10 @@ import ImagemQ77 from "../embt/imgs/2025-77.png";
 
 
 
+import NotasEmbt2025 from "../components/notas-embt2025";
+
+
+
 const { Text, Title } = Typography;
 
 const TituloCard = {
@@ -3182,9 +3186,10 @@ const BolinhaLetra = ({ letra, selecionada, onSelect }) => (
 
 
 
-export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
+export default function Embt2025({ idUsuario, nomeUsuario, emailUsuario, respostas1dia, respostas2dia,  notaLinguagens, notaHumanas, notaNatureza, notaMatematica, notaRedacao }) {
   const [fazendoProva, setFazendoProva] = useState(false);
-  const final = new Date("2025-05-25T18:30:01");
+  const [finalizou, setFinalizou] = useState(false);
+  const final = new Date("2030-12-07T00:00:01");
 
   const [riscar, setRiscar] = useState({});
   const [answers, setAnswers] = useState(respostas1dia);
@@ -3214,7 +3219,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
   };
 
   useEffect(() => {
-    if (Date.now() <= final) setFazendoProva(true);
+    if (Date.now() <= final && !finalizou) setFazendoProva(true);
 
     const timer = setInterval(() => {
       setTempoRestante((prev) => {
@@ -3241,7 +3246,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
     salvarRespostas();
 
     return () => clearInterval(timer);
-  }, [fazendoProva, answers]);
+  }, [fazendoProva, answers, finalizou]);
 
 
 
@@ -3294,7 +3299,8 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
 
 
           <div style={{ width: "100%", marginBottom: "20px" }}>
-            <span style={{fontWeight: "bold"}}>NOME DO PARTICIPANTE:&nbsp;</span>{nomeUsuario.toUpperCase()}
+            <span style={{fontWeight: "bold"}}>NOME DO PARTICIPANTE:&nbsp;</span>{nomeUsuario.toUpperCase()}<br/>
+            <span style={{fontWeight: "bold"}}>E-MAIL:&nbsp;</span>{emailUsuario}
           </div>
 
           <div style={{
@@ -3308,15 +3314,16 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
 
           <Text>
             <b>LEIA ATENTAMENTE AS INSTRUÇÕES SEGUINTES:</b><br />
-            1. Esta prova contém 80 questões numeradas de 01 a 80 e a Proposta de Redação, dispostas da seguinte maneira:<br />
+            1. Esta prova contém 120 questões numeradas de 01 a 120 e a Proposta de Redação, dispostas da seguinte maneira:<br />
             &nbsp;&nbsp;&nbsp;&nbsp;a. questões de número 01 a 40, relativas à área de Linguagens, Códigos e suas Tecnologias;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;b. Proposta de Redação;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;c. questões de número 41 a 80, relativas à área de Ciências Humanas e suas Tecnologias. <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;c. questões de número 81 a 120, relativas à área de Ciências da Natureza e suas Tecnologias. <br />
             2. Para cada uma das questões objetivas, são apresentadas 5 opções. Apenas uma responde corretamente à questão.<br />
             3. Os rascunhos e as marcações assinaladas no CADERNO DE QUESTÕES não serão considerados na avaliação.<br />
             4. Somente serão corrigidas as redações transcritas na FOLHA DE REDAÇÃO.<br />
             5. Preencha o seu gabarito a seguir à caneta, assinalando apenas uma alternativa para cada questão. Questões com nenhuma ou mais de uma alternativa assinalada serão consideradas incorretas.<br />
-            6. O tempo recomendado para simular esta aplicação é de <b>cinco horas</b>. Você poderá simular a prova ou realizá-la a longo prazo, desde que a finalize antes das 23h59 do dia 11/05/2025 (domingo). Fique atento ao cronômetro no canto inferior direito da sua tela. <b>Quando ele zerar, não será mais possível continuar a fazer a prova!</b><br />
+            6. O tempo recomendado para simular esta aplicação é de <b>sete horas</b> não consecutivas. Você poderá simular a prova ou realizá-la a longo prazo, desde que a finalize antes das 23h59 do dia 07/12/2030. Fique atento ao cronômetro no canto inferior direito da sua tela. <b>Quando ele zerar, não será mais possível continuar a fazer a prova!</b><br />
             7. Mesmo que você imprima a prova e a obtenha fisicamente, as respostas devem ser enviadas, OBRIGATORIAMENTE, nesse formulário.<br />
             8. Dica.: Na modalidade ON-LINE, ao clicar no texto de uma alternativa, você irá "riscá-la", para que, visualmente, seja uma alternativa descartada. Para reverter a ação, basta clicar no texto da alternativa novamente.<br />
             9. Caso tenha alguma dúvida, sinta-se livre para enviá-la no grupo do BDT ou no contato da comissão elaboradora.<br />
@@ -3329,10 +3336,16 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
           }}
             onClick={() => window.open("https://drive.google.com/file/d/1xFvnMluCt-wiW_WCF881gtmbN538-LmA/view?usp=sharing", "_blank")}
           >
-            <FilePdfOutlined /> Acessar prova em PDF
+            <FilePdfOutlined /> Acessar prova do 1º dia em PDF
           </Button>
 
-
+          <Button style={{
+            backgroundColor: "orange", color: "white", fontWeight: "bold", border: "1px solid orange"
+          }}
+            onClick={() => window.open("https://docs.google.com/document/d/10uQ4CUJtsx8qi0vwhLU3JWJ8OB12qUsJxt-DeBFNxsc/edit?usp=sharing", "_blank")}
+          >
+            <FilePdfOutlined /> Acessar prova do 2º dia em Docx
+          </Button>
 
 
           
@@ -3342,7 +3355,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
               <Button
                 danger
                 onClick={() => {
-                  const confirmar = window.confirm('Tem certeza que deseja limpar o gabarito? Essa ação apagará TODAS as respostas preenchidas. Clique em "OK" para apagar.');
+                  const confirmar = window.confirm('Tem certeza que deseja limpar o gabarito? Essa ação apagará ABSOLUTAMENTE TODAS as respostas preenchidas. Clique em "OK" para apagar.');
                   if (confirmar) {
                     const reset = Array(80).fill("");
                     setAnswers(reset);
@@ -3353,7 +3366,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
               </Button>
 
               <Button type="primary" onClick={() => {
-                const input = prompt("Cole seu gabarito (ex: ABCDXABCDE...):");
+                const input = prompt("Cole seu gabarito de 120 questões (ex: ABCDXABCDE...):");
                 if (!input) return;
                 const letras = input.toUpperCase().replace(/[^ABCDEX]/g, "").split("");
                 const preenchido = Array(80).fill("");
@@ -3393,7 +3406,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
             </div>
 
             <Title level={5}>Ciências Humanas e suas Tecnologias (Questões de 41 a 80)</Title>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "25px" }}>
               {[...Array(40)].map((_, i) => (
                 <div key={i + 40} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                   <span style={{ fontSize: "12px" }}>{String(i + 41).padStart(2, "0")}</span>
@@ -3411,6 +3424,32 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
                       if (!"ABCDEX".includes(letra) && letra !== "") return;
                       const newAnswers = [...answers];
                       newAnswers[i + 40] = letra;
+                      setAnswers(newAnswers);
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            <Title level={5}>Ciências da Natureza e suas Tecnologias (Questões de 81 a 120)</Title>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+              {[...Array(40)].map((_, i) => (
+                <div key={i + 80} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <span style={{ fontSize: "12px" }}>{String(i + 81).padStart(2, "0")}</span>
+                  <Input
+                    maxLength={1}
+                    style={{
+                      width: 40,
+                      textAlign: "center",
+                      textTransform: "uppercase",
+                      fontWeight: "bold",
+                    }}
+                    value={answers[i + 80] || ""}
+                    onChange={(e) => {
+                      const letra = e.target.value.toUpperCase();
+                      if (!"ABCDEX".includes(letra) && letra !== "") return;
+                      const newAnswers = [...answers];
+                      newAnswers[i + 80] = letra;
                       setAnswers(newAnswers);
                     }}
                   />
@@ -3591,28 +3630,170 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia }) {
           ))}
 
 
+
+
+          <Title level={3} style={{ marginTop: "40px" }}>
+            CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS
+            <Title level={5}>Questões de 81 a 120</Title>
+          </Title> 
+          <Text style={{color: "red"}}>* O processamento necessário para carregar esta página de aplicação é extremamente alto. Para preservar o desempenho do seu aparelho, nossa equipe optou por disponibilizar a PROVA DO 2º DIA exclusivamente na forma de documento.</Text>
+          <Text style={{color: "red"}}>* Para facilitar a sua vida, colocamos outra seção de preenchimento rápido do Gabarito logo abaixo.</Text>
+
+
+          <Button style={{
+            backgroundColor: "orange", color: "white", fontWeight: "bold", border: "1px solid orange"
+          }}
+            onClick={() => window.open("https://docs.google.com/document/d/10uQ4CUJtsx8qi0vwhLU3JWJ8OB12qUsJxt-DeBFNxsc/edit?usp=sharing", "_blank")}
+          >
+            <FilePdfOutlined /> Acessar prova do 2º dia em Docx
+          </Button>
+
+          
+
+          <Card title="📝 Preenchimento rápido do Gabarito" style={{ border: "2px solid orange", marginTop: "20px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
+              <Button
+                danger
+                onClick={() => {
+                  const confirmar = window.confirm('Tem certeza que deseja limpar o gabarito? Essa ação apagará ABSOLUTAMENTE TODAS as respostas preenchidas. Clique em "OK" para apagar.');
+                  if (confirmar) {
+                    const reset = Array(80).fill("");
+                    setAnswers(reset);
+                  }
+                }}
+              >
+                Limpar Gabarito
+              </Button>
+
+              <Button type="primary" onClick={() => {
+                const input = prompt("Cole seu gabarito de 120 questões (ex: ABCDXABCDE...):");
+                if (!input) return;
+                const letras = input.toUpperCase().replace(/[^ABCDEX]/g, "").split("");
+                const preenchido = Array(80).fill("");
+                letras.forEach((l, i) => {
+                  if (i < 80) preenchido[i] = l;
+                });
+                setAnswers(preenchido);
+              }}>
+                Colar Gabarito
+              </Button>
+            </div>
+
+            <Title level={5}>Linguagens, Códigos e suas Tecnologias (Questões de 01 a 40)</Title>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "25px" }}>
+              {[...Array(40)].map((_, i) => (
+                <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <span style={{ fontSize: "12px" }}>{String(i + 1).padStart(2, "0")}</span>
+                  <Input
+                    maxLength={1}
+                    style={{
+                      width: 40,
+                      textAlign: "center",
+                      textTransform: "uppercase",
+                      fontWeight: "bold",
+                    }}
+                    value={answers[i] || ""}
+                    onChange={(e) => {
+                      const letra = e.target.value.toUpperCase();
+                      if (!"ABCDEX".includes(letra) && letra !== "") return;
+                      const newAnswers = [...answers];
+                      newAnswers[i] = letra;
+                      setAnswers(newAnswers);
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            <Title level={5}>Ciências Humanas e suas Tecnologias (Questões de 41 a 80)</Title>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "25px" }}>
+              {[...Array(40)].map((_, i) => (
+                <div key={i + 40} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <span style={{ fontSize: "12px" }}>{String(i + 41).padStart(2, "0")}</span>
+                  <Input
+                    maxLength={1}
+                    style={{
+                      width: 40,
+                      textAlign: "center",
+                      textTransform: "uppercase",
+                      fontWeight: "bold",
+                    }}
+                    value={answers[i + 40] || ""}
+                    onChange={(e) => {
+                      const letra = e.target.value.toUpperCase();
+                      if (!"ABCDEX".includes(letra) && letra !== "") return;
+                      const newAnswers = [...answers];
+                      newAnswers[i + 40] = letra;
+                      setAnswers(newAnswers);
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            <Title level={5}>Ciências da Natureza e suas Tecnologias (Questões de 81 a 120)</Title>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+              {[...Array(40)].map((_, i) => (
+                <div key={i + 80} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <span style={{ fontSize: "12px" }}>{String(i + 81).padStart(2, "0")}</span>
+                  <Input
+                    maxLength={1}
+                    style={{
+                      width: 40,
+                      textAlign: "center",
+                      textTransform: "uppercase",
+                      fontWeight: "bold",
+                    }}
+                    value={answers[i + 80] || ""}
+                    onChange={(e) => {
+                      const letra = e.target.value.toUpperCase();
+                      if (!"ABCDEX".includes(letra) && letra !== "") return;
+                      const newAnswers = [...answers];
+                      newAnswers[i + 80] = letra;
+                      setAnswers(newAnswers);
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </Card>
+
+
           <Title level={4} style={{ marginTop: "40px" }}>
-            PARABÉNS! VOCÊ FINALIZOU A PROVA! (monstrão vc) 💪<br/>
-            Suas respostas foram enviadas automaticamente.
-          </Title>
+            PARABÉNS! VOCÊ FINALIZOU O SIMULADO! (monstrão vc) 💪<br/><br/>
+            <Button onClick={() => {
+              setFinalizou(true)
+              setFazendoProva(false)
+            }
+            }>OBTER DESEMPENHO</Button>
+          </Title><br/><br/>
         </Space>
+
+
+
+
       ) : (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
-          <Title level={3}>⏳ Aplicação encerrada!</Title>
-          <Text>A aplicação da prova terminou. Se você não terminou de respondê-la a tempo, as respostas das questões que você fez foram enviadas automaticamente.</Text><br/><br/>
-          <Text>👉 Você poderá acessar o gabarito preliminar clicando&nbsp;<a href="https://drive.google.com/file/d/1oJ1f-s21c24leQLdQg4nyc7k0iFo_GXt/view?usp=sharing" style={{color: "orange", fontWeight: "bold"}} target="_blank">AQUI</a>.</Text><br/>
-          <Text>👉 Você poderá enviar um e-mail para contestar o gabarito preliminar clicando&nbsp;
-            <a
-              style={{color: "orange", fontWeight: "bold"}}
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=grupobondedotigrao@gmail.com&su=Contestação%20do%20gabarito%20preliminar%20do%20primeiro%20dia%20de%20provas%20da%20EMBT2025&body=Olá,%0A%0AGostaria%20de%20contestar%20a%20questão%20[informar número da questão],%20presente%20no%20primeiro%20dia%20de%20provas%20da%20EMBT2025.%0AA questão apresenta o seguinte problema: [explicar, detalhadamente, o problema que torna a questão, bem como seu gabarito, inconsistentes].%0A%0AAtenciosamente,%0A[seu nome]."
-              target="_blank" rel="noopener noreferrer"
-            >
-              AQUI
-            </a>.
-          </Text><br/>
-        </div>
+        finalizou ? (
+          <>
+            <Title level={3}>Converse um pouco com Wolfo...</Title>
+            <NotasEmbt2025 
+                idUsuario={idUsuario} nomeUsuario={nomeUsuario} emailUsuario={emailUsuario} respostas1dia={answers} respostas2dia={respostas2dia}
+                notaLinguagens={notaLinguagens} notaHumanas={notaHumanas} notaNatureza={notaNatureza} notaMatematica={notaMatematica} notaRedacao={notaRedacao}
+              />
+          </>
+        ) : (
+          <div style={{ textAlign: "center", marginTop: "50px" }}>
+            <Title level={3}>Peraí que a bosta da plataforma tá carregando... ⏳</Title>
+          </div>/*
+          <div style={{ textAlign: "center", marginTop: "50px" }}>
+            <Title level={3}>⏳ Aplicação encerrada!</Title>
+            <Text>A aplicação da prova terminou. Se você não terminou de respondê-la a tempo, as respostas das questões que você fez foram enviadas automaticamente.</Text><br/><br/>
+          </div>*/
+        )
+        
       )
       }
+      
     </>
   );
 }

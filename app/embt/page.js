@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { Button, Modal, Input, Typography } from "antd";
 import Embt2025 from "../components/embt2025-1dia";
-import NotasEmbt2025 from "../components/notas-embt2025";
 import LoginModal from "../components/LoginModal";
 
 
@@ -16,6 +15,7 @@ export default function EMBT() {
   const [logado, setLogado] = useState(false);
   const [usuarioId, setUsuarioId] = useState("Usuário desconhecido");
   const [usuarioNome, setUsuarioNome] = useState("Usuário desconhecido");
+  const [usuarioEmail, setUsuarioEmail] = useState("Email desconhecido");
   const [usuarioRespostas1dia, setUsuarioRespostas1dia] = useState([]);
   const [usuarioRespostas2dia, setUsuarioRespostas2dia] = useState([]);
   const [usuarioNotaLinguagens, setUsuarioNotaLinguagens] = useState([]);
@@ -44,6 +44,7 @@ export default function EMBT() {
       if (data.length > 0) {
         setUsuarioId(data[0].id);
         setUsuarioNome(data[0].nome);
+        setUsuarioEmail(data[0].email);
         setUsuarioRespostas1dia(data[0].respostas_embt2025dia1);
         setUsuarioRespostas2dia(data[0].respostas_embt2025dia2);
         setUsuarioNotaLinguagens(data[0].nota_linguagens);
@@ -70,12 +71,11 @@ export default function EMBT() {
   return (
     <div className="content">
       {logado ? (
-        /*<Embt2025 idUsuario={usuarioId} nomeUsuario={usuarioNome} respostas1dia={usuarioRespostas1dia} />
-        <NotasEmbt2025 
-          idUsuario={usuarioId} nomeUsuario={usuarioNome} respostas1dia={usuarioRespostas1dia} respostas2dia={usuarioRespostas2dia}
-          notaLinguagens={usuarioNotaLinguagens} notaHumanas={usuarioNotaHumanas} notaNatureza={usuarioNotaNatureza} notaMatematica={usuarioNotaMatematica} notaRedacao={usuarioNotaRedacao}
-        />*/
-        <p>Indisponível! Aguarde algum pronunciamento da Comissão Organizadora da EMBT.</p>
+        <>
+          <Embt2025 idUsuario={usuarioId} nomeUsuario={usuarioNome} emailUsuario={usuarioEmail} respostas1dia={usuarioRespostas1dia} 
+            respostas2dia={usuarioRespostas2dia} notaLinguagens={usuarioNotaLinguagens} notaHumanas={usuarioNotaHumanas} notaNatureza={usuarioNotaNatureza} notaMatematica={usuarioNotaMatematica} notaRedacao={usuarioNotaRedacao}/>
+        </>
+        
       ) : (
         <LoginModal
           visible={!logado}

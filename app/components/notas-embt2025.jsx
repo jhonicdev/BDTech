@@ -31,7 +31,7 @@ const TituloCard = {
 
 
 
-export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respostas2dia, notaLinguagens = 0, notaHumanas = 0, notaNatureza = 0, notaMatematica = 0, notaRedacao = 0 }) {
+export default function Embt2025({ idUsuario, nomeUsuario, emailUsuario, respostas1dia, respostas2dia, notaLinguagens = 0, notaHumanas = 0, notaNatureza = 0, notaMatematica = 0, notaRedacao = 0 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isVistaPedagogicaOpen, setIsVistaPedagogicaOpen] = useState(false);
 
@@ -126,8 +126,8 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
 
 
 
-  const gabarito1dia = "DCBDCBCCCDCDEBCEAADCAAAECBCDAEDEDAEBADBC" + "DDBAAACBBEBECDCEECCDADDCCBACCACDDDADABDB" + "DCBDCBCCCDCDEBCEAADCAAAECBCDAEDEDAEBADBC";
-
+  const gabarito1dia = "DCBDCBCCCDCDEBCEAADCAAAECBCDAEDEDAEBADBC" + "DDBAAACBBEBECDCEECCDADDCCBACCACDDDADABDB" + "EEEDBDEDDABECCECBCEEEADCEDCDCADEBCBAECBA";
+  // "DCBDCBCCCDCDEBCEAADCAAAECBCDAEDEDAEBADBCDDBAAACBBEBECDCEECCDADDCCBACCACDDDADABDBEEEDBDEDDABECCECBCEEEADCEDCDCADEBCBAECBA"
 
 
 
@@ -168,6 +168,10 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
     if (idUsuario == "Pablo") setUserIcon(pIcon.src);
     if (idUsuario == "JoaoPaulo") setUserIcon(jpIcon.src);
 
+    
+
+    
+
   }, [currentStep, hasShownStep, userIcon, idUsuario]);
 
 
@@ -182,6 +186,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
 
   let acertosLinguagens = 0;
   let acertosHumanas = 0;
+  let acertosNatureza = 0;
   let discrepanciaLinguagens = [
     5.9, 5.3, 6.8, 6.1, 6.3,
     6.0, 5.1, 6.2, 6.6, 5.7,
@@ -202,6 +207,16 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
     6.9, 6.5, 6.9, 6.4, 6.5,
     6.6, 5.7, 5.9, 6.9, 6.0,
   ];
+  let discrepanciaNatureza = [
+    7.1, 6.9, 6.7, 7.0, 7.4,
+    6.3, 7.3, 6.1, 7.1, 6.9,
+    7.1, 7.5, 7.4, 5.9, 6.3,
+    6.8, 7.1, 6.9, 7.4, 7.9,
+    7.3, 6.2, 7.5, 7.7, 7.9,
+    6.3, 6.9, 6.7, 7.1, 6.7,
+    7.2, 7.5, 7.0, 8.3, 7.1,
+    7.1, 7.2, 7.1, 7.2, 8.0,
+  ];
 
 
 
@@ -210,6 +225,10 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
   ];
   let acHumanas = [
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  ];
+  let acNatureza = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
   ];
@@ -226,6 +245,13 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
       if ((respostas1dia?.[i] || "").toUpperCase() === gabarito1dia[i]) {
         acertosHumanas++;
         acHumanas[i - 40] = 1;
+      }
+    }
+    
+    for (let i = 80; i < 120; i++) {
+      if ((respostas1dia?.[i] || "").toUpperCase() === gabarito1dia[i]) {
+        acertosNatureza++;
+        acNatureza[i - 80] = 1;
       }
     }
   }
@@ -286,7 +312,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
     let media = (discrepanciasArea.reduce((acc, val) => acc + val, 0)) / discrepanciasArea.length;
 
     for (let d of discrepanciasArea) {
-      base += d * 1.2;
+      base += d * 1.15;
     }
 
     let notaCoerencia = 0;
@@ -307,7 +333,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
 
   notaLinguagens = calcularNota(discrepanciaLinguagens, acLinguagens, acertosLinguagens, calcularCoerenciaTRI(discrepanciaLinguagens, acLinguagens)).replace('.', ',');
   notaHumanas = calcularNota(discrepanciaHumanas, acHumanas, acertosHumanas, calcularCoerenciaTRI(discrepanciaHumanas, acHumanas)).replace('.', ',');
-  notaNatureza = 0
+  notaNatureza = calcularNota(discrepanciaNatureza, acNatureza, acertosNatureza, calcularCoerenciaTRI(discrepanciaNatureza, acNatureza)).replace('.', ',');
   notaMatematica = 0
 
   const notaTableData = [
@@ -315,31 +341,31 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
       key: '1',
       area: 'Linguagens, Códigos e suas Tecnologias',
       nota: notaLinguagens || "Indisponível",
-      situacao: notaLinguagens == 0 ? "Em branco" : "Enviada",
+      situacao: notaLinguagens == 0 ? "Em aberto" : "Enviada",
     },
     {
       key: '2',
       area: 'Ciências Humanas e suas Tecnologias',
       nota: notaHumanas || "Indisponível",
-      situacao: notaHumanas == 0 ? "Em branco" : "Enviada",
+      situacao: notaHumanas == 0 ? "Em aberto" : "Enviada",
     },
     {
       key: '3',
       area: 'Ciências da Natureza e suas Tecnologias',
-      nota: typeof(notaNatureza) == String ? notaNatureza : 0,
-      situacao: notaNatureza == 0 ? "Em branco" : "Enviada",
+      nota: notaNatureza || 0,
+      situacao: notaNatureza == 0 ? "Em aberto" : "Enviada",
     },
     {
       key: '4',
       area: 'Matemática e suas Tecnologias',
-      nota: typeof(notaMatematica) == String ? notaMatematica : 0,
-      situacao: notaMatematica == 0 ? "Em branco" : "Enviada",
+      nota: typeof(notaMatematica) == String ? notaMatematica : "?",
+      situacao: notaMatematica == 0 ? "Em aberto" : "Em aberto",
     },
     {
       key: '5',
       area: 'Redação',
-      nota: notaRedacao == "" ? notaRedacao :  0,
-      situacao: notaRedacao == "" ? "Enviada" : "Anulada",
+      nota: notaRedacao == "" ? notaRedacao :  "?",
+      situacao: notaRedacao == "" ? "Em aberto" : "Em aberto",
     },
   ];
   const notaTableColumns = [
@@ -367,7 +393,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
           Eai, {nomeUsuario}!<br />
           Eu sou <b>Wolfo</b>. <br /><br />
           Acho que Felinx me falou um pouco sobre você... Ouvi dizer que você é muito inteligente!<br />
-          Você participou do primeiro dia da <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>, né?<br />
+          Você acabou de fazer a <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>, né?<br />
         </Text>
       ),
       options: [
@@ -438,7 +464,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
       message: (
         <Text>
           Você simplesmente AR-RA-SOU com essa frase! 💫📍<br /><br />
-          Mas... E se eu dissesse que eu tenho acesso às suas notas? 👀<br />
+          Mas... E se eu dissesse que eu tenho acesso ao seu desempenho? 👀<br />
         </Text>
       ),
       options: [
@@ -448,7 +474,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
     conversa4: {
       message: (
         <Text>
-          Quer acessá-las?<br />
+          Quer obter seu desempenho?<br />
         </Text>
       ),
       options: [
@@ -542,13 +568,14 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
         (
           <div>
             <Text>
-              PEGAAA aí suas notas da <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>, campeão!
+              PEGAAA aí o seu desempenho na <span style={{ color: "#b45f06", fontWeight: "bold" }}>EMBT<i style={{ fontWeight: "normal", color: "gray" }}>2025</i></span>, campeão!
             </Text><br />
             <Text>Você tem talento, hein? PARABÉNS! 🧡💪</Text>
 
             <div style={{ marginTop: 16 }}>
               <div style={{ width: "100%", marginBottom: "20px" }}>
-                <span style={{ fontWeight: "bold" }}>NOME DO PARTICIPANTE:&nbsp;</span>{nomeUsuario.toUpperCase()}
+                <span style={{ fontWeight: "bold" }}>NOME DO PARTICIPANTE:&nbsp;</span>{nomeUsuario.toUpperCase()}<br/>
+                <span style={{ fontWeight: "bold" }}>E-MAIL:&nbsp;</span>{emailUsuario}
               </div>
               <Table
                 dataSource={notaTableData}
@@ -636,7 +663,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
                 <Title level={5}>
                   {acertosHumanas}/40 - Ciências Humanas e suas Tecnologias
                 </Title>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "25px" }}>
                   {[...Array(40)].map((_, i) => (
                     <div key={i + 40} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                       <span style={{ fontSize: "12px" }}>{String(i + 41).padStart(2, "0")}</span>
@@ -652,6 +679,30 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
                         }}
                       >
                         {respostas1dia[i + 40] || ""}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <Title level={5}>
+                  {acertosNatureza}/40 - Ciências da Natureza e suas Tecnologias
+                </Title>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                  {[...Array(40)].map((_, i) => (
+                    <div key={i + 80} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                      <span style={{ fontSize: "12px" }}>{String(i + 81).padStart(2, "0")}</span>
+                      <span
+                        style={{
+                          width: 40,
+                          textAlign: "center",
+                          textTransform: "uppercase",
+                          fontWeight: "bold",
+                          backgroundColor: respostas1dia[i + 80]?.toUpperCase() === gabarito1dia[i + 80] ? "#d4edda" : "#f8d7da",
+                          borderRadius: 4,
+                          padding: "2px 4px",
+                        }}
+                      >
+                        {respostas1dia[i + 80] || ""}
                       </span>
                     </div>
                   ))}
@@ -674,6 +725,8 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
               <Text>👉 com <span style={{ fontWeight: "bold" }}>{acertosLinguagens} acertos</span>, na prova de Linguagens, Códigos e suas Tecnologias, você obteve uma coerência de <b>{(calcularCoerenciaTRI(discrepanciaLinguagens, acLinguagens) * 100).toFixed(1)}%</b> em suas respostas.</Text>
               <br />
               <Text>👉 com <span style={{ fontWeight: "bold" }}>{acertosHumanas} acertos</span>, na prova de Ciências Humanas e suas Tecnologias, você obteve uma coerência de <b>{(calcularCoerenciaTRI(discrepanciaHumanas, acHumanas) * 100).toFixed(1)}%</b> em suas respostas.</Text>
+              <br />
+              <Text>👉 com <span style={{ fontWeight: "bold" }}>{acertosNatureza} acertos</span>, na prova de Ciências da Natureza e suas Tecnologias, você obteve uma coerência de <b>{(calcularCoerenciaTRI(discrepanciaNatureza, acNatureza) * 100).toFixed(1)}%</b> em suas respostas.</Text>
 
             </Modal>
 
@@ -713,6 +766,7 @@ export default function Embt2025({ idUsuario, nomeUsuario, respostas1dia, respos
         </div>
       )
       }
+
     </>
   );
 }
