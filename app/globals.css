@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+.birthday-photo {
+  border-radius: 50%;
+  border: 6px solid gold;
+  box-shadow: 0 0 25px gold;
+  animation: birthdayPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes birthdayPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 15px gold;
+  }
+
+  50% {
+    transform: scale(1.12);
+    box-shadow: 0 0 45px gold;
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px gold;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

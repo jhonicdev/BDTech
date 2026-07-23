@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.players {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.gameCard {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.status {
+    margin-bottom: 20px;
+    font-size: 18px;
+    height: 30px;
+}
+
+.board {
+    display: inline-block;
+    background: #f0f2f5;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #d9d9d9;
+    background: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 4px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.square:hover {
+    background: #e6f7ff;
+    border-color: #1890ff;
+}
+
+.square.x {
+    color: #1890ff;
+}
+
+.square.o {
+    color: #52c41a;
+}
+
+.square.winner {
+    background: #f6ffed;
+    border-color: #52c41a;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}

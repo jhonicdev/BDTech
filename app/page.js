@@ -7,10 +7,16 @@ import Image from "next/image";
 import Felinx from "./imgs/felinx.jpg";
 
 
+import Aniversariante from "./imgs/jaaj-hiperfocado.jpg";
+
+
 const { Text, Title } = Typography;
 const { Header, Content } = Layout;
 
-
+const today = new Date();
+const isJardielBirthday =
+  today.getDate() === 22 &&
+  today.getMonth() === 6;
 
 
 
@@ -22,8 +28,8 @@ const botFlow = {
       <Text>
         Olá! Seja bem-vindx ao <i>BDTech</i>!<br />
         Eu sou <b>Felinx</b>, assistente do BDT.<br />
-        Eu te ajudo a ficar por dentro de tudo que está acontecendo no BDT!<br/><br />
-        <span style={{color: "red"}}>Infelizmente, estou em período de manutenção e não vou conseguir te atender no momento... :(</span>
+        Eu te ajudo a ficar por dentro de tudo que está acontecendo no BDT!<br /><br />
+        <span style={{ color: "red" }}>Infelizmente, estou em período de manutenção e não vou conseguir te atender no momento... :(</span>
         <br />
       </Text>
     )
@@ -131,8 +137,40 @@ export default function Home() {
 
   return (
     <>
-      
 
+      {
+        isJardielBirthday && (
+          <div
+            style={{
+              position: "fixed",
+              top: 20,
+              left: "50%",
+              transform: "translateX(-50%)",
+              zIndex: 2000,
+              textAlign: "center",
+              background: "#fff8e1",
+              padding: "16px",
+              borderRadius: "16px",
+              boxShadow: "0 4px 15px rgba(0,0,0,.2)",
+            }}
+          >
+            <Image
+              src={Aniversariante}
+              alt="Aniversariante"
+              width={250}
+              height={250}
+              className="birthday-photo"
+            />
+
+            <Title level={3} style={{ marginTop: 12 }}>
+              🎉 para beins 🎂
+            </Title>
+
+            <Text>
+              muitos anos de p- vida 🥳
+            </Text>
+          </div>
+        )}
 
 
 
@@ -162,7 +200,7 @@ export default function Home() {
       />
 
       {/* Janela do chat */}
-      
+
       {isChatOpen && (
         <div
           className="chat-window"

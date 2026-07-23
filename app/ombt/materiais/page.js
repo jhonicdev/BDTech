@@ -5,7 +5,14 @@ import Title from 'antd/lib/typography/Title';
 import Text from 'antd/lib/typography/Text';
 import { FileTextOutlined, FileSearchOutlined } from "@ant-design/icons";
 
-const { Panel } = Collapse;
+const ProvaLink = ({ href, color, title, nivel, fase }) => (
+    <a className={styles["Prova-Gabarito"]} target="_blank" href={href} rel="noopener noreferrer">
+        <FileTextOutlined style={{ color }} />
+        <Title level={5} strong>{title}</Title>
+        <Text style={{ color }}>{nivel}</Text>
+        <Text italic>{fase}</Text>
+    </a>
+);
 
 export default function Materiais() {
     const items = [
@@ -19,9 +26,30 @@ export default function Materiais() {
             children: (
                 <section className={styles["Provas-Gabaritos"]}>
                     <a className={styles["Prova-Gabarito"]} target="_blank" href="https://docs.google.com/document/d/1n6qoTZXlvek8Jem0aFY4xC16VxWs6po-RA4F6s4fPvU/edit?tab=t.0">
-                        <FileSearchOutlined style={{ color: "orange", fontSize: "22px" }} />
+                        <FileSearchOutlined style={{ color: "black", fontSize: "22px" }} />
                         <Title level={5}>REGULAMENTO OFICIAL</Title>
                     </a>
+                    <ProvaLink 
+                        href="https://drive.google.com/file/d/14ZZB6Yxt3Ivo194MTpAm_azn0Iu20jQ6/view?usp=sharing"
+                        color="green"
+                        title="PROVA"
+                        nivel="NÍVEL T1"
+                        fase="Fase Única"
+                    />
+                    <ProvaLink 
+                        href="https://drive.google.com/file/d/1Ac-9Qmj7UyeAapo4aJo4wa8kATGfLrRg/view?usp=sharing"
+                        color="orange"
+                        title="PROVA"
+                        nivel="NÍVEL T2"
+                        fase="Fase Única"
+                    />
+                    <ProvaLink 
+                        href="https://drive.google.com/file/d/147tCNtCgkjnOxMYLRxq-NJIdYRcUNT5r/view?usp=sharing"
+                        color="purple"
+                        title="PROVA"
+                        nivel="NÍVEL T3"
+                        fase="Fase Única"
+                    />
                 </section>
             ),
         },
